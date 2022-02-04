@@ -1,0 +1,24 @@
+{
+  "name": "projet4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cocci38/projet4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cocci38/projet4/issues"
+  },
+  "homepage": "https://github.com/Cocci38/projet4#readme",
+  "dependencies": {
+    "mjml": "^4.12.0"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
