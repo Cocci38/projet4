@@ -65,7 +65,5 @@ class ConnexionDb{
         {
             echo "Message d'erreur : " .$e->getMessage(). "<br />"; 
         }
-        
     }
-   
 }
