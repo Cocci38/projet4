@@ -11,23 +11,11 @@ $router = new AltoRouter();
 
 $router->map( 'GET', '/projet4/', 'acceuil','acceuil'); // GET,URL,ADDRESSE,NOM
 $router->map( 'GET', '/projet4/annonce/[*:slug]-[i:id]','traitement');
-$router->map( 'GET', '/projet4/annonce/[*:slug]-[i:id]','annonce');
-$router->map( 'GET', '/projet4/blog/[*:slug]-[i:id]','blog/annonce');
+$router->map( 'GET', '/projet4/annonce/','annonce','annonce');
 
 $match = $router->match();
 
-    if(is_array($match)){
-        require "../app/views/elements/header.php";
-        if(is_callable($match['target'])){
-            call_user_func_array($match['target'],$match['params']);
-        }else{
-            $params=$match['params'];
-            require "../app/views/{$match['target']}.php";
-        }
-    }else{
-        require "../app/views/error.php";
-    }
-    require "../app/views/elements/footer.php";
+require "../app/controller/controller.php";
     // $match['target']();
 
 

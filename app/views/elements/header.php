@@ -7,4 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<header><a href="<?=$router->generate('acceuil');?>">acceuil</a></header>
+<header>
+    <a href="<?=$router->generate('acceuil');?>">acceuil</a>
+    <a href="<?=$router->generate('annonce');?>">annonce</a>
+</header>
