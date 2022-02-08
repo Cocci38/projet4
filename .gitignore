@@ -3,7 +3,10 @@ composer.lock
 vendor/
 node_modules/
 npm-global/
+package-lock.json
+package.json
+altorouter/
 .htaccess
 altorouter/
-node_modules
-maquette
+maquette/
+node_modules/
