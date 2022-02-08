@@ -34,12 +34,21 @@ class __TwigTemplate_8efa4ed620e144fc641d64d3a5e24763bfbfc6db4a2d1b137422dd099cc
     {
         $macros = $this->macros;
         // line 1
-        echo "hello les gens de l'
-";
-        // line 2
-        echo twig_escape_filter($this->env, ($context["nom"] ?? null), "html", null, true);
         echo "
-
+<html lang=\"fr\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>";
+        // line 7
+        echo twig_escape_filter($this->env, ($context["nom"] ?? null), "html", null, true);
+        echo "</title>
+</head>
+<body>
+    hello world
+</body>
+</html>
 
 
 ";
@@ -57,7 +66,7 @@ class __TwigTemplate_8efa4ed620e144fc641d64d3a5e24763bfbfc6db4a2d1b137422dd099cc
 
     public function getDebugInfo()
     {
-        return array (  40 => 2,  37 => 1,);
+        return array (  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
