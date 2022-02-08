@@ -1,4 +1,4 @@
-composer.json
+gcomposer.json
 composer.lock
 vendor/
 node_modules/
