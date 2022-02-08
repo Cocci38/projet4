@@ -11,6 +11,7 @@ $router = new AltoRouter();
 
 $router->map( 'GET', '/projet4/', 'acceuil','acceuil'); // GET,URL,ADDRESSE,NOM
 $router->map( 'GET', '/projet4/annonce/[*:slug]-[i:id]','traitement');
+$router->map( 'GET', '/projet4/annonce/[*:slug]-[i:id]','annonce');
 $router->map( 'GET', '/projet4/blog/[*:slug]-[i:id]','blog/annonce');
 
 $match = $router->match();
