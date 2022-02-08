@@ -1,6 +1,6 @@
 <?php
-require "../vendor\autoload.php";
-require "../vendor\altorouter\altorouter\AltoRouter.php";
+require "../vendor/autoload.php";
+require "../vendor/altorouter/altorouter/AltoRouter.php";
 $uri=$_SERVER['REQUEST_URI'];
 $router = new AltoRouter();
 
