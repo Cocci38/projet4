@@ -6,7 +6,6 @@ npm-global/
 package-lock.json
 package.json
 altorouter/
-.htaccess
 altorouter/
 maquette/
 node_modules/
