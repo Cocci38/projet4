@@ -10,7 +10,7 @@ $router = new AltoRouter();
 // });
 
 $router->map( 'GET', '/projet4/', 'acceuil','acceuil'); // GET,URL,ADDRESSE,NOM
-$router->map( 'GET', '/projet4/annonce/[*:slug]-[i:id]','traitement');
+$router->map( 'GET', '/projet4/contact/','contact','contact');
 $router->map( 'GET', '/projet4/annonce/','annonce','annonce');
 
 $match = $router->match();
