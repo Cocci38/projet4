@@ -12,7 +12,7 @@
     <a href="<?=$router->generate('acceuil');?>">acceuil</a>
     <a href="<?=$router->generate('annonce');?>">annonce</a>
 </header>   
-<div class="container"><?= $pageContent?></div>
+ <div class="container"><?= $pageContent?></div> <!--$pageContent est le corp de la page, la partie qui change contrairement au header et footer  -->
 <footer></footer>
 </body>
 </html>
