@@ -16,5 +16,23 @@ $twig = new \Twig\Environment($loader, [
 ]);
 
 if ($page === 'home') {
-    echo $twig->render('home.twig', ['nom' => 'accueil']);
+
+    $pagetitle = 'Accueil';
+    $element = [
+        'titre' => 'brouette',
+        'prix' => 34
+    ];
+    $etat = null;
+    $annonces = [
+        ['titre' => 'brouette', 'prix' => 12],
+        ['titre' => 'camion', 'prix' => 34],
+        ['titre' => 'moto', 'prix' => 7889],
+        ['titre' => 'ambulance', 'prix' => 498],
+        ['titre' => 'landeau', 'prix' => 25],
+        ['titre' => 'avion', 'prix' => 1454]
+
+    ];
+
+    echo $twig->render('accueil.html.twig', compact('annonces'));
+    
 }
