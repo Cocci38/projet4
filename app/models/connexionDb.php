@@ -9,7 +9,7 @@ class ConnexionDb{
     
     public function __construct(){
         try{
-            $this->codb = new PDO("mysql:host=localhost;dbname=mon_site", "root", "",[
+            $this->codb = new PDO("mysql:host=localhost;dbname=projet4", "root", "",[
             PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_OBJ,
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8']);
@@ -21,21 +21,36 @@ class ConnexionDb{
         }
     }
     
-    public function Select($table,$nomColonne,$valeur){
-        try{
-            $connexion=$this->codb->prepare("SELECT * FROM $table WHERE $nomColonne=:$nomColonne");
-            $connexion->bindParam(':'.$nomColonne,$valeur);
-            $connexion->execute();
-            $result=$connexion->fetchall();
-            return $result;
+    public function Select($table="",$nomColonne="",$valeur=""){
+        if(!empty($table) && !empty($nomColonne) && !empty($valeur)){
+            try{
+                $connexion=$this->codb->prepare("SELECT * FROM $table WHERE $nomColonne=:$nomColonne");
+                $connexion->bindParam(':'.$nomColonne,$valeur);
+                $connexion->execute();
+                $result=$connexion->fetchall();
+                return $result;
+            }
+            catch(PDOException $e)
+            {
+                echo "Message d'erreur : " .$e->getMessage(). "<br />"; 
+            }
+        }elseif(!empty($table) && empty($nomColonne) && empty($valeur)){
+            try{
+                $connexion=$this->codb->prepare("SELECT * FROM $table");
+                $connexion->bindParam(':'.$nomColonne,$valeur);
+                $connexion->execute();
+                $result=$connexion->fetchall();
+                return $result;
+            }
+            catch(PDOException $e)
+            {
+                echo "Message d'erreur : " .$e->getMessage(). "<br />"; 
+            }
         }
-        catch(PDOException $e)
-        {
-            echo "Message d'erreur : " .$e->getMessage(). "<br />"; 
-        }
+        
     }
 
-    public function Insert($nomColonne,$valeur){
+    public function Insert($table,$nomColonne,$valeur){
         try{
             $stringNomColonne1="";
             $stringNomColonne2="";
@@ -45,7 +60,7 @@ class ConnexionDb{
             }
             $stringNomColonne1 = substr_replace($stringNomColonne1 ,"",-1);
             $stringNomColonne2 = substr_replace($stringNomColonne2 ,"",-1);
-            $connexion=$this->codb->prepare("INSERT INTO utilisateurs($stringNomColonne1) VALUES ($stringNomColonne2)");
+            $connexion=$this->codb->prepare("INSERT INTO $table($stringNomColonne1) VALUES ($stringNomColonne2)");
             for($i=0;$i<count($nomColonne);$i++){
                 $connexion->bindParam(':'.$nomColonne[$i],$valeur[$i]);
             }
@@ -72,3 +87,4 @@ class ConnexionDb{
 }
 
 $connexionDb = new GlobalConnexionDb;
+

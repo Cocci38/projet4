@@ -14,5 +14,6 @@
 </header>   
  <div class="container"><?= $pageContent?></div> <!--$pageContent est le corp de la page, la partie qui change contrairement au header et footer  -->
 <footer></footer>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
     if(is_array($match)){
+        require "../app/models/connexionDb.php";
         if(is_callable($match['target'])){
             call_user_func_array($match['target'],$match['params']);
         }else{
@@ -13,5 +14,4 @@
     }else{
         require "../app/views/errorView.php";
     }
-    
 ?>
