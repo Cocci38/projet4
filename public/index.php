@@ -10,9 +10,10 @@ $router = new AltoRouter();
 // });
 
 $router->map( 'GET|POST', '/projet4/', 'acceuil','acceuil'); // GET,URL,ADDRESSE,NOM
-$router->map( 'GET|POST', '/projet4/ajouter/','ajouter','ajouter');
-$router->map( 'GET|POST', '/projet4/ajouter/[*:slug]','ajouter');
-$router->map( 'GET|POST', '/projet4/annonce/','annonce','annonce');
+$router->map( 'GET|POST', '/projet4/ajouter','ajouter','ajouter');
+$router->map( 'GET|POST', '/projet4/annonce','annonce','annonce');
+$router->map( 'GET|POST', '/projet4/error','error','error');
+$router->map( 'GET|POST', '/projet4/validation','validation','validation');
 
 $match = $router->match();
 

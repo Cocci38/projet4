@@ -2,12 +2,13 @@
 $pageTitle = "Ajoutez votre annonce";
 $pageDescription = "Ajoutez votre annonce afin que tout le monde puisse y avoir accés";
 //------------------------------------------------------------------------------
-// $result=$connexionDb->Select("");
+// $result=$connexionDb->Select();
 // echo "<pre>", print_r($result), "</pre>";
 // $result=$connexionDb->Insert('',[],[]);
 // $result=$connexionDb->Delete();
+var_dump($_POST);
 ?>
-<form action="<?=$router->generate('acceuil');?>" method="GET">
+<form action="<?=$router->generate('ajouter');?>" method="POST">
     <div>
         <label for="nom">nom : </label>
         <input type="text" name="nom">
