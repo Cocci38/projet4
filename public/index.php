@@ -9,10 +9,10 @@ $router = new AltoRouter();
 // 	require __DIR__ . '/views/acceuil.php';
 // });
 
-$router->map( 'GET', '/projet4/', 'acceuil','acceuil'); // GET,URL,ADDRESSE,NOM
-$router->map( 'GET', '/projet4/ajouter/','ajouter','ajouter');
-$router->map( 'GET', '/projet4/ajouter/[*:slug]','ajouter');
-$router->map( 'GET', '/projet4/annonce/','annonce','annonce');
+$router->map( 'GET|POST', '/projet4/', 'acceuil','acceuil'); // GET,URL,ADDRESSE,NOM
+$router->map( 'GET|POST', '/projet4/ajouter/','ajouter','ajouter');
+$router->map( 'GET|POST', '/projet4/ajouter/[*:slug]','ajouter');
+$router->map( 'GET|POST', '/projet4/annonce/','annonce','annonce');
 
 $match = $router->match();
 
