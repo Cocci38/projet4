@@ -10,7 +10,10 @@
 <body>
 <header>
     <a href="<?=$router->generate('acceuil');?>">acceuil</a>
+    <a href="<?=$router->generate('ajouter');?>">ajouter</a>
     <a href="<?=$router->generate('annonce');?>">annonce</a>
+    <a href="<?=$router->generate('error');?>">error</a>
+    <a href="<?=$router->generate('validation');?>">validation</a>
 </header>   
  <div class="container"><?= $pageContent?></div> <!--$pageContent est le corp de la page, la partie qui change contrairement au header et footer  -->
 <footer></footer>
