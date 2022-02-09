@@ -34,4 +34,3 @@ $pageDescription = "Ajoutez votre annonce afin que tout le monde puisse y avoir 
     </div>
     <button>validé</button>
 </form>
-?>
