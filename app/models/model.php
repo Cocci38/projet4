@@ -1,4 +1,7 @@
 <?php
+
+use ConnexionDb as GlobalConnexionDb;
+
 session_start();
 class ConnexionDb{
     
@@ -67,3 +70,5 @@ class ConnexionDb{
         }
     }
 }
+
+$connexionDb = new GlobalConnexionDb;
