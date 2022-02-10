@@ -13,7 +13,7 @@ if($_POST){
         $email=$connexionDb->Select('id','email','email',$_POST['email']);
         if(!empty($email)){
             echo "<pre>", print_r($email), "</pre>";
-            $connexionDb->Insert('annonce',['nom','description','prix','id_email'],[$_POST['nom'],$_POST['description'],$_POST['prix'],$email[0]->id]);
+            $connexionDb->Insert('annonce',['nom','description','prix','id_email'],[$_POST['nom'],$_POST['description'],$_POST['prix'],$email->id]);
         }else{
             $connexionDb->Insert('email',['email'],[$_POST['email']]);
         }
@@ -43,7 +43,7 @@ if($_POST){
     </div>
     <div>
         <label for="photo">photo : </label>
-        <input type="text" name="photo">
+        <input type="file" name="photo">
     </div>
     <button>validé</button>
 </form>
