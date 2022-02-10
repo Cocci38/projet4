@@ -1,6 +1,10 @@
 <?php
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
+
+use \node_modules\Mjml\Renderer\BinaryRenderer;
+
+$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 //routing
 $page = 'home';
@@ -23,16 +27,21 @@ if ($page === 'home') {
         'prix' => 34
     ];
     $etat = null;
+    $annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@fee.fr', 'etat' => 'Validation', 'id' => 02];
     $annonces = [
-        ['titre' => 'brouette', 'prix' => 12],
+        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 12, 'mail' => 12],
         ['titre' => 'camion', 'prix' => 34],
         ['titre' => 'moto', 'prix' => 7889],
-        ['titre' => 'ambulance', 'prix' => 498],
+        ['titre' => 'ambulance', 'prix' => 47],
         ['titre' => 'landeau', 'prix' => 25],
         ['titre' => 'avion', 'prix' => 1454]
 
     ];
+    
+    $annonceMJML = $twig->display('mail-add-update.html.twig', compact('annonce'));
+    $annonceHTML = $renderer->render($annonceMJML);
 
-    echo $twig->render('accueil.html.twig', compact('annonces'));
+
+    mail($destinaire, $sujet, $annonceHTML);
     
 }

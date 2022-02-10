@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+{% block pagetitle %}Accueil
+{% endblock %}
+{% set compteur=1 %}
+
+
+{% block body %}
+	<h1>Mes annonces</h1>
+	{% for annonce in annonces %}
+<div>
+
+
+	<h1>
+		{{ annonce.titre }}</h1>
+	<h2>{{ annonce.prix }}€</h2>
+
+{% set compteur = compteur+1 %}</div>
+
+
+	{% endfor %}
+{% endblock %}
+

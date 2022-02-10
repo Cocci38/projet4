@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+{% block pagetitle %}Détails d'une annonce
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block body %}
+
+	<div>{{annonce.titre}}</div>
+	<div>{{annonce.categorie}}</div>
+	<div>{{annonce.mail}}</div>
+	<div>{{annonce.prix}}</div>
+	<div>{{annonce.decription}}</div>
+	<div><img src="{{annonce.image1}}" width="200px" height="150px" alt="" srcset=""></div>
+	<div><img src="{{annonce.image2}}" width="200px" height="150px" alt="" srcset=""></div>
+	<div><img src="{{annonce.image3}}" width="200px" height="150px" alt="" srcset=""></div>
+	<div><img src="{{annonce.image4}}" width="200px" height="150px" alt="" srcset=""></div>
+	<div><img src="{{annonce.image5}}" width="200px" height="150px" alt="" srcset=""></div>
+	<div><img src="{{annonce.image6}}" width="200px" height="150px" alt="" srcset=""></div>
+{% endblock %}
+
