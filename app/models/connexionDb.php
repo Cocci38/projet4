@@ -21,10 +21,10 @@ class ConnexionDb{
         }
     }
     
-    public function Select($table="",$nomColonne="",$valeur=""){
-        if(!empty($table) && !empty($nomColonne) && !empty($valeur)){
+    public function Select($values="*",$table="",$nomColonne="",$valeur=""){
+        if(!empty($table) && !empty($table) && !empty($nomColonne) && !empty($valeur)){
             try{
-                $connexion=$this->codb->prepare("SELECT * FROM $table WHERE $nomColonne=:$nomColonne");
+                $connexion=$this->codb->prepare("SELECT $values FROM $table WHERE $nomColonne=:$nomColonne");
                 $connexion->bindParam(':'.$nomColonne,$valeur);
                 $connexion->execute();
                 $result=$connexion->fetchall();
@@ -34,9 +34,9 @@ class ConnexionDb{
             {
                 echo "Message d'erreur : " .$e->getMessage(). "<br />"; 
             }
-        }elseif(!empty($table) && empty($nomColonne) && empty($valeur)){
+        }elseif(!empty($values) && !empty($table) && empty($nomColonne) && empty($valeur)){
             try{
-                $connexion=$this->codb->prepare("SELECT * FROM $table");
+                $connexion=$this->codb->prepare("SELECT $values FROM $table");
                 $connexion->bindParam(':'.$nomColonne,$valeur);
                 $connexion->execute();
                 $result=$connexion->fetchall();

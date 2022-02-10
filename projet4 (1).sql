@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 10 fév. 2022 à 07:45
+-- Généré le : jeu. 10 fév. 2022 à 08:56
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -44,12 +44,23 @@ CREATE TABLE `annonce` (
 
 INSERT INTO `annonce` (`id`, `nom`, `description`, `prix`, `id_categorie`, `id_email`, `id_photo`, `validité`) VALUES
 (1, 'villa Pietro de st baldoph', 'lorem', '3000', '1', '1', '1', ''),
-(20, 'evev', 'vev', '14', NULL, NULL, NULL, NULL),
-(21, 'bdb', 'dbd', '12', NULL, NULL, NULL, NULL),
-(22, 'dhdh', 'hdhdh', '145', NULL, NULL, NULL, NULL),
-(23, 'dhdh', 'hdhdh', '145', NULL, NULL, NULL, NULL),
-(24, ',gg', ',g,', '14', NULL, NULL, NULL, NULL),
-(25, ',gg', ',g,', '14', NULL, NULL, NULL, NULL);
+(32, 'chambre Delgado', 'lorem', '500', NULL, NULL, NULL, NULL),
+(34, 'Domaine de Rhodes', 'lorem', '3000', NULL, NULL, NULL, NULL),
+(35, 'La Laiterie de Tocqueville', 'lorem', '4500', NULL, NULL, NULL, NULL),
+(36, 'Santa Giulia Palace', 'lorem', '3500', NULL, NULL, NULL, NULL),
+(37, 'Gîtes d\'Armor', 'lorem', '3200', NULL, NULL, NULL, NULL),
+(38, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(39, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(40, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(41, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(42, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(43, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(44, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(45, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
+(46, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
+(47, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
+(48, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
+(49, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -59,7 +70,7 @@ INSERT INTO `annonce` (`id`, `nom`, `description`, `prix`, `id_categorie`, `id_e
 
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
-  `nom_categorie` varchar(50) DEFAULT NULL
+  `categorie` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -73,6 +84,13 @@ CREATE TABLE `email` (
   `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `email`
+--
+
+INSERT INTO `email` (`id`, `email`) VALUES
+(1, '');
+
 -- --------------------------------------------------------
 
 --
@@ -81,7 +99,7 @@ CREATE TABLE `email` (
 
 CREATE TABLE `photo` (
   `id` int(11) NOT NULL,
-  `nom_photo` varchar(50) DEFAULT NULL
+  `photo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -120,7 +138,7 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT pour la table `annonce`
 --
 ALTER TABLE `annonce`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
@@ -132,7 +150,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `email`
 --
 ALTER TABLE `email`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `photo`
