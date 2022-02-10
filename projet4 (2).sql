@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 10 fév. 2022 à 08:56
+-- Généré le : jeu. 10 fév. 2022 à 14:40
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -35,14 +35,14 @@ CREATE TABLE `annonce` (
   `id_categorie` varchar(50) DEFAULT NULL,
   `id_email` varchar(50) DEFAULT NULL,
   `id_photo` varchar(50) DEFAULT NULL,
-  `validité` varchar(50) DEFAULT NULL
+  `validite` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `annonce`
 --
 
-INSERT INTO `annonce` (`id`, `nom`, `description`, `prix`, `id_categorie`, `id_email`, `id_photo`, `validité`) VALUES
+INSERT INTO `annonce` (`id`, `nom`, `description`, `prix`, `id_categorie`, `id_email`, `id_photo`, `validite`) VALUES
 (1, 'villa Pietro de st baldoph', 'lorem', '3000', '1', '1', '1', ''),
 (32, 'chambre Delgado', 'lorem', '500', NULL, NULL, NULL, NULL),
 (34, 'Domaine de Rhodes', 'lorem', '3000', NULL, NULL, NULL, NULL),
@@ -50,17 +50,12 @@ INSERT INTO `annonce` (`id`, `nom`, `description`, `prix`, `id_categorie`, `id_e
 (36, 'Santa Giulia Palace', 'lorem', '3500', NULL, NULL, NULL, NULL),
 (37, 'Gîtes d\'Armor', 'lorem', '3200', NULL, NULL, NULL, NULL),
 (38, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(39, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(40, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(41, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(42, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(43, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(44, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(45, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(46, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
 (47, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
-(48, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
-(49, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL);
+(83, 'sbsdbs', 'herhr', '1741', NULL, '3', NULL, NULL),
+(84, 'sbsdbs', 'herhr', '1741', NULL, '3', NULL, NULL),
+(85, 'sbsdbs', 'herhr', '14', NULL, '11', NULL, NULL),
+(86, 'sbsdbs', 'herhr', '14', NULL, '11', NULL, NULL),
+(87, 'sbsdbs', 'herhr', '14', NULL, '11', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -72,6 +67,22 @@ CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
   `categorie` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `categorie`) VALUES
+(1, ''),
+(2, 'ttkt'),
+(3, 'ttkt'),
+(4, 'ttkt'),
+(5, 'ttkt'),
+(6, 'ttkt'),
+(7, 'ttkt'),
+(8, 'ttkt'),
+(9, 'ttkt'),
+(10, 'ttkt');
 
 -- --------------------------------------------------------
 
@@ -89,7 +100,8 @@ CREATE TABLE `email` (
 --
 
 INSERT INTO `email` (`id`, `email`) VALUES
-(1, '');
+(3, 'ktkyky@djdj.com'),
+(11, 'YURRIMUTO@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -100,6 +112,17 @@ INSERT INTO `email` (`id`, `email`) VALUES
 CREATE TABLE `photo` (
   `id` int(11) NOT NULL,
   `photo` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `url`
+--
+
+CREATE TABLE `url` (
+  `id` int(11) NOT NULL,
+  `url` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -131,6 +154,12 @@ ALTER TABLE `photo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `url`
+--
+ALTER TABLE `url`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -138,24 +167,30 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT pour la table `annonce`
 --
 ALTER TABLE `annonce`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `email`
 --
 ALTER TABLE `email`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `photo`
 --
 ALTER TABLE `photo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `url`
+--
+ALTER TABLE `url`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
