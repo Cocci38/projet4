@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 use \node_modules\Mjml\Renderer\BinaryRenderer;
 
-$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+//$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 //routing
 $page = 'home';
@@ -37,11 +37,12 @@ if ($page === 'home') {
         ['titre' => 'avion', 'prix' => 1454]
 
     ];
-    
-    $annonceMJML = $twig->display('mail-add-update.html.twig', compact('annonce'));
-    $annonceHTML = $renderer->render($annonceMJML);
+
+    //$annonceMJML = $twig->display('mail-add-update.html.twig', compact('annonce'));
+    echo $twig->display('index.twig', compact('annonces'));
+    //$annonceHTML = $renderer->render($annonceMJML);
 
 
-    mail($destinaire, $sujet, $annonceHTML);
+    //mail($destinaire, $sujet, $annonceHTML);
     
 }
