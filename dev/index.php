@@ -16,8 +16,9 @@ if (isset($_GET['p'])) {
 //rendu\
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
 $twig = new \Twig\Environment($loader, [
-    'cache' => __DIR__ . '/tmp'
+    'cache' => false//__DIR__ . '/tmp'
 ]);
+
 
 if ($page === 'home') {
 
