@@ -40,7 +40,7 @@ if ($page === 'home') {
     ];
 
     //$annonceMJML = $twig->display('mail-add-update.html.twig', compact('annonce'));
-    echo $twig->display('index.twig', compact('annonces'));
+    echo $twig->display('ajout.html.twig');
     //$annonceHTML = $renderer->render($annonceMJML);
 
 
