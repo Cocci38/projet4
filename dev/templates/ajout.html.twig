@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+{% block pagetitle %}ajout d'une Annonce
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block body %}
+	<form action="" method="post">
+		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required>
+		<input type="text" name="categorie" id="catégorie" placeholder="categorie" required>
+		<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required>
+		<input type="float" name="prix" id="prix" placeholder="prix" required>
+		<textarea type="description" name="description" id="description"></textarea>
+		<input type="file" name="photo01" id="photo01">
+		<input type="file" name="photo02" id="photo02">
+		<input type="file" name="photo03" id="photo03">
+		<input type="file" name="photo04" id="photo04">
+		<input type="file" name="photo05" id="photo06">
+		<input type="file" name="photo06" id="photo06">
+
+
+		<button type="submit">Envoyer</button>
+		<button type="reset">Annuler</button>
+	</form>
+{% endblock %}
+

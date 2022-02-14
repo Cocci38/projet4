@@ -1,0 +1,76 @@
+<mjml>
+<mj-head>
+</mj-head>
+<mj-style>
+    {color:#fae5e7;
+    /*background:radial-gradient(45deg,#1b2125,#3c1823);*/
+    background: radial-gradient(circle, rgba(172,66,73,1) 0% , rgba(27,33,37,1) 85% );
+    background-position: -150px;}
+</mj-style>
+<mj-title>mail</mj-title>
+<mj-body>
+<!--Nav barre-->
+<mj-section background-color="#ac4249">
+    <mj-column>
+            <mj-navbar base-url="https://localhot/projet4/dev/" hamburger="hamburger" ico-color="#fae5e7">
+                <mj-navbar-link href="/try-it-live" color="#ffffff">Logo</mj-navbar-link>
+                <mj-navbar-link href="https://localhot/projet4/dev/?etat=add" color="#fae5e7">Slogan</mj-navbar-link>
+            </mj-navbar>
+    </mj-column>
+</mj-section>
+<!--body annonce-->
+<mj-section background-color="#ac4249">
+    <mj-column>
+        <mj-text color="#fae5e7">
+            <h1>Récapitulatif de l'Annonce Postée</h1>        
+        </mj-text>
+    </mj-column>
+</mj-section>
+<mj-section background-color="#ac4249">
+    <mj-column>
+    <mj-text color="#fae5e7">
+            {{TITRE de L'ANNONCE}}
+        </mj-text>
+        <mj-text color="#fae5e7">
+            {{CATEGORIE}}
+        </mj-text>
+        <mj-text color="#fae5e7">
+            {{PRIX}}
+        </mj-text>    
+    </mj-column>
+    <mj-column>
+        <mj-text color="#fae5e7">
+            {{DESCRIPTION}}
+        </mj-text>
+    </mj-column>
+</mj-section>
+<mj-section background-color="#ac4249">
+    <mj-column>
+       <mj-image src="http://localhost/projet4/img/{{PHOTO1}}" alt="{{PHOTO1}}" />
+    </mj-column>
+    <mj-column>
+        <mj-image src="http://localhost/projet4/img/{{PHOTO2}}" alt="{{PHOTO2}}" />
+    </mj-column>  
+    <mj-column>
+       <mj-image src="http://localhost/projet4/img/{{PHOTO3}}" alt="{{PHOTO3}}" />
+    </mj-column>
+    <mj-column>
+        <mj-image src="http://localhost/projet4/img/{{PHOTO4}}" alt="{{PHOTO4}}" />
+    </mj-column>  
+    <mj-column>
+        <mj-image src="http://localhost/projet4/img/{{PHOTO5}}" alt="{{PHOTO5}}" />
+    </mj-column>  
+</mj-section>    
+<mj-section background-color="#ac4249">
+    <mj-column>
+    <mj-button font-family="font-family: 'Montserrat', sans-serif;
+        font-family: 'Nunito', sans-serif;" background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=confirm">VALIDER</mj-button>
+    </mj-column>            
+    <mj-column >
+        <mj-button font-family="font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;" background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=update">MODIFIER
+        </mj-button>
+    </mj-column>
+</mj-section>
+</mj-body>    
+</mjml>

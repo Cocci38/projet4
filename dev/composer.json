@@ -1,0 +1,17 @@
+{
+    "name": "acs/dev",
+    "autoload": {
+        "psr-4": {
+            "Acs\\Dev\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "codeuronline",
+            "email": "j.kasperski@codeur.online"
+        }
+    ],
+    "require": {
+        "twig/twig": "~3.0"
+    }
+}
