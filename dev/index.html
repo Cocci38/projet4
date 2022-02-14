@@ -178,11 +178,11 @@
                         </div>
                         <div class="mj-inline-links" style="">
                           <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center"><tr><td style="padding:15px 10px;" class="" ><![endif]-->
-                          <a class="mj-link" href="https://localhot/projet4/dev//try-it-live" target="_blank"
+                          <a class="mj-link" href="https://localhot/projet4/dev/try-it-live" target="_blank"
                             style="display:inline-block;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;">
                             Logo </a>
                           <!--[if mso | IE]></td><td style="padding:15px 10px;" class="" ><![endif]-->
-                          <a class="mj-link" href="https://localhot/projet4/dev/https://localhot/projet4/dev/?etat=add"
+                          <a class="mj-link" href="https://localhot/projet4/dev/?etat=add"
                             target="_blank"
                             style="display:inline-block;color:#fae5e7;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;">
                             Slogan </a>
@@ -248,21 +248,21 @@
                       <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                         <div
                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#fae5e7;">
-                          {{TITRE de L'ANNONCE}}</div>
+                          {{annonce.title}}</div>
                       </td>
                     </tr>
                     <tr>
                       <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                         <div
                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#fae5e7;">
-                          {{CATEGORIE}}</div>
+                          {{annonce.categorie}}</div>
                       </td>
                     </tr>
                     <tr>
                       <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                         <div
                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#fae5e7;">
-                          {{PRIX}}</div>
+                          {{annonce.prix}}</div>
                       </td>
                     </tr>
                   </tbody>
@@ -278,7 +278,7 @@
                       <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                         <div
                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#fae5e7;">
-                          {{DESCRIPTION}}</div>
+                          {{annonce.description}}</div>
                       </td>
                     </tr>
                   </tbody>
@@ -310,7 +310,7 @@
                           <tbody>
                             <tr>
                               <td style="width:70px;">
-                                <img alt="{{PHOTO1}}" height="auto" src="http://localhost/projet4/img/{{PHOTO1}}"
+                                <img alt="PHOTO1" height="auto" src="http://localhost/projet4/img/{{annonce.PHOTO1}}"
                                   style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="70" />
                               </td>
@@ -335,7 +335,7 @@
                           <tbody>
                             <tr>
                               <td style="width:70px;">
-                                <img alt="{{PHOTO2}}" height="auto" src="http://localhost/projet4/img/{{PHOTO2}}"
+                                <img alt="{{PHOTO2}}" height="auto" src="http://localhost/projet4/img/{{annonce.PHOTO2}}"
                                   style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="70" />
                               </td>
@@ -360,7 +360,7 @@
                           <tbody>
                             <tr>
                               <td style="width:70px;">
-                                <img alt="{{PHOTO3}}" height="auto" src="http://localhost/projet4/img/{{PHOTO3}}"
+                                <img alt="{{PHOTO3}}" height="auto" src="http://localhost/projet4/img/{{annonce.PHOTO3}}"
                                   style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="70" />
                               </td>
@@ -385,7 +385,7 @@
                           <tbody>
                             <tr>
                               <td style="width:70px;">
-                                <img alt="{{PHOTO4}}" height="auto" src="http://localhost/projet4/img/{{PHOTO4}}"
+                                <img alt="{{PHOTO4}}" height="auto" src="http://localhost/projet4/img/{{annonce.{PHOTO4}}"
                                   style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="70" />
                               </td>
@@ -410,7 +410,7 @@
                           <tbody>
                             <tr>
                               <td style="width:70px;">
-                                <img alt="{{PHOTO5}}" height="auto" src="http://localhost/projet4/img/{{PHOTO5}}"
+                                <img alt="{{PHOTO5}}" height="auto" src="http://localhost/projet4/img/{{annonce.PHOTO5}}"
                                   style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="70" />
                               </td>
@@ -452,8 +452,8 @@
                                 style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#3c1823;"
                                 valign="middle">
                                 <a href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=confirm"
-                                  style="display:inline-block;background:#3c1823;color:#fae5e7;font-family:font-family: 'Montserrat', sans-serif;
-        font-family: 'Nunito', sans-serif;;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;"
+                                  style="display:inline-block;background:#3c1823;color:#fae5e7;font-family:font-family:'Montserrat',sans-serif;
+        font-family:'Nunito', sans-serif;;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;"
                                   target="_blank"> VALIDER </a>
                               </td>
                             </tr>
