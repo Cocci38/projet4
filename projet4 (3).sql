@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 10 fév. 2022 à 14:40
+-- Généré le : lun. 14 fév. 2022 à 12:34
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -32,57 +32,10 @@ CREATE TABLE `annonce` (
   `nom` varchar(50) DEFAULT NULL,
   `description` text,
   `prix` varchar(50) DEFAULT NULL,
-  `id_categorie` varchar(50) DEFAULT NULL,
   `id_email` varchar(50) DEFAULT NULL,
-  `id_photo` varchar(50) DEFAULT NULL,
+  `identifiant` varchar(255) DEFAULT NULL,
   `validite` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `annonce`
---
-
-INSERT INTO `annonce` (`id`, `nom`, `description`, `prix`, `id_categorie`, `id_email`, `id_photo`, `validite`) VALUES
-(1, 'villa Pietro de st baldoph', 'lorem', '3000', '1', '1', '1', ''),
-(32, 'chambre Delgado', 'lorem', '500', NULL, NULL, NULL, NULL),
-(34, 'Domaine de Rhodes', 'lorem', '3000', NULL, NULL, NULL, NULL),
-(35, 'La Laiterie de Tocqueville', 'lorem', '4500', NULL, NULL, NULL, NULL),
-(36, 'Santa Giulia Palace', 'lorem', '3500', NULL, NULL, NULL, NULL),
-(37, 'Gîtes d\'Armor', 'lorem', '3200', NULL, NULL, NULL, NULL),
-(38, 'Natura Lodge', 'lorem', '2500', NULL, NULL, NULL, NULL),
-(47, 'Casa Dina', 'lorem', '3500', NULL, NULL, NULL, NULL),
-(83, 'sbsdbs', 'herhr', '1741', NULL, '3', NULL, NULL),
-(84, 'sbsdbs', 'herhr', '1741', NULL, '3', NULL, NULL),
-(85, 'sbsdbs', 'herhr', '14', NULL, '11', NULL, NULL),
-(86, 'sbsdbs', 'herhr', '14', NULL, '11', NULL, NULL),
-(87, 'sbsdbs', 'herhr', '14', NULL, '11', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `categorie`
---
-
-CREATE TABLE `categorie` (
-  `id` int(11) NOT NULL,
-  `categorie` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `categorie`
---
-
-INSERT INTO `categorie` (`id`, `categorie`) VALUES
-(1, ''),
-(2, 'ttkt'),
-(3, 'ttkt'),
-(4, 'ttkt'),
-(5, 'ttkt'),
-(6, 'ttkt'),
-(7, 'ttkt'),
-(8, 'ttkt'),
-(9, 'ttkt'),
-(10, 'ttkt');
 
 -- --------------------------------------------------------
 
@@ -95,14 +48,6 @@ CREATE TABLE `email` (
   `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `email`
---
-
-INSERT INTO `email` (`id`, `email`) VALUES
-(3, 'ktkyky@djdj.com'),
-(11, 'YURRIMUTO@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -111,7 +56,8 @@ INSERT INTO `email` (`id`, `email`) VALUES
 
 CREATE TABLE `photo` (
   `id` int(11) NOT NULL,
-  `photo` varchar(50) DEFAULT NULL
+  `photo` varchar(50) DEFAULT NULL,
+  `id_annonce` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -133,12 +79,6 @@ CREATE TABLE `url` (
 -- Index pour la table `annonce`
 --
 ALTER TABLE `annonce`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `categorie`
---
-ALTER TABLE `categorie`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -167,19 +107,13 @@ ALTER TABLE `url`
 -- AUTO_INCREMENT pour la table `annonce`
 --
 ALTER TABLE `annonce`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
-
---
--- AUTO_INCREMENT pour la table `categorie`
---
-ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `email`
 --
 ALTER TABLE `email`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `photo`
