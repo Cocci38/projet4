@@ -28,4 +28,10 @@ class annonce extends ConnexionDb{
     }
 }
 
+//Utilisation de la fonction
+// echo "<br>",$result1=genererChaineAleatoire();
+// // echo "<br>",$result2=genererChaineAleatoire(20);
+
+// echo "<br>",$cryptedPass1=password_hash($result1,PASSWORD_DEFAULT,['cost' => 12]);
+// echo "<br>",var_dump(password_verify($result1,$cryptedPass1));
 ?>

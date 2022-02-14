@@ -11,7 +11,7 @@ class ConnexionDb{
         try{
             $this->codb = new PDO("mysql:host=localhost;dbname=projet4", "root", "",[
             PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,
+            PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_OBJ,
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8']);
 
         }
@@ -77,6 +77,21 @@ class ConnexionDb{
         try{
             $connexion=$this->codb->prepare("DELETE FROM $table WHERE $nomColonne= :$nomColonne");
             $connexion->bindParam(':'.$nomColonne,$valeur);
+            $connexion->execute();
+        }
+        catch(PDOException $e)
+        {
+            echo "Message d'erreur : " .$e->getMessage(). "<br />"; 
+        }
+    }
+    // Update a tester
+    public function Update($table,$nomColonne,$newValue,$id){
+        try{
+            $connexion=$this->codb->prepare("UPDATE $table
+            SET $nomColonne = :newValue
+            WHERE id = :id");
+            $connexion->bindParam(':'. 'newValue',$newValue);
+            $connexion->bindParam(':'. 'id',$id);
             $connexion->execute();
         }
         catch(PDOException $e)
