@@ -2,8 +2,11 @@
 
 require_once 'vendor/autoload.php';
 
-use \node_modules\Mjml\Renderer\BinaryRenderer;
 
+use \node_modules\Mjml\Renderer\BinaryRenderer;
+$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+
+    
 //$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 //routing
@@ -38,12 +41,14 @@ if ($page === 'home') {
         ['titre' => 'avion', 'prix' => 1454]
 
     ];
+    /** Insertion de l'annonce */
 
-    //$annonceMJML = $twig->display('mail-add-update.html.twig', compact('annonce'));
-    echo $twig->display('ajout.html.twig');
-    //$annonceHTML = $renderer->render($annonceMJML);
-
-
-    //mail($destinaire, $sujet, $annonceHTML);
+    $annonceMJML = $twig->render('mail-add-update.twig', compact('annonce'));
+    
+    echo $twig->display('ajout.twig');
+    $annonceHTML = $renderer->render($annonceMJML);
+    $sujet = "mail de " . $annonce['etat'];
+    $desinataire = $annonce['mail'];
+    mail($destinaire, $sujet, $annonceHTML);
     
 }
