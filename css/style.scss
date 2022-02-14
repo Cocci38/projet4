@@ -1,0 +1,6 @@
+@mixin centrage{
+    color:blue;
+}
+body{
+    @include centrage;
+}
