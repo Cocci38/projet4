@@ -1,14 +1,27 @@
 $fond: #ac4249;
-$fond :#1b2125;
+$corpstexte :#1b2125;
 $bouton :#3c1823;
 $couleurtexte  :#fae5e7;  
 
 body{
     color: $couleurtexte;
 }
-header{
+header,footer{
+    background: radial-gradient(circle,$fond 0% , $corpstexte 85% );
+    background-position: -150px;
     justify-content: space-evenly;
-    align:center;
     display: flex;
     
+}
+a{
+color: $couleurtexte;
+text-decoration: none;
+}
+a:hover{
+    color:$bouton;
+    text-decoration: none;
+}
+.container{
+    border: 2px $corpstexte;
+    background-color: #fae5e7;
 }

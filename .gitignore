@@ -1,6 +1,4 @@
 gcomposer.json
 composer.lock
-node_modules/
-npm-global/
 .htaccess
 altorouter/
