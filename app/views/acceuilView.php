@@ -2,25 +2,25 @@
 $pageTitle = "Nos annonces";
 $pageDescription = "suivez le fil d'actualité des annonces récemment publié";
 // var_dump($_POST);
-$result = $connexionDb->Select("*",'annonce');
+$result = $connexionDb->Select("*", 'annonce');
 $result = array_reverse($result);
-for($i=0;$i<10;$i++){
-    echo "<pre>", print_r($result[$i]), "</pre>";
-}
+//for($i=0;$i<10;$i++){
+//  echo "<pre>", print_r($result[$i]), "</pre>";
+//}
 // echo "<pre>", print_r($result), "</pre>";
-if($_POST){
-    if(isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['prix']) && isset($_POST['email'])){
-        $email=$connexionDb->Select('id','email','email',$_POST['email']);
-        if(!empty($email)){
+if ($_POST) {
+    if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['prix']) && isset($_POST['email'])) {
+        $email = $connexionDb->Select('id', 'email', 'email', $_POST['email']);
+        if (!empty($email)) {
             echo "<pre>", print_r($email), "</pre>";
-            $connexionDb->Insert('annonce',['nom','description','prix','id_email'],[$_POST['nom'],$_POST['description'],$_POST['prix'],$email->id]);
-        }else{
-            $connexionDb->Insert('email',['email'],[$_POST['email']]);
+            $connexionDb->Insert('annonce', ['nom', 'description', 'prix', 'id_email'], [$_POST['nom'], $_POST['description'], $_POST['prix'], $email->id]);
+        } else {
+            $connexionDb->Insert('email', ['email'], [$_POST['email']]);
         }
     }
 }
 ?>
-<form action="<?=$router->generate('acceuil');?>" method="POST">
+<form action="<?= $router->generate('acceuil'); ?>" method="POST">
     <div>
         <label for="nom">nom : </label>
         <input type="text" name="nom">
@@ -47,4 +47,3 @@ if($_POST){
     </div>
     <button>validé</button>
 </form>
-

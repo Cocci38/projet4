@@ -10,15 +10,19 @@ var_dump($_POST);
 ?>
 <form action="<?=$router->generate('ajouter');?>" method="POST">
     <div>
-        <label for="nom">nom : </label>
-        <input type="text" name="nom">
+        <label for="nom">
+            <h1>Titre de l'annonce:</h1><input type="text" name="nom">
     </div>
     <div>
-        <label for="description">description : </label>
+        <label for="description">
+            <h1>Description :</h1>
+        </label>
         <input type="text" name="description">
     </div>
     <div>
-        <label for="prix">prix : </label>
+        <label for="prix">
+            <h1>Prix :</h1>
+        </label>
         <input type="number" name="prix">
     </div>
     <div>
@@ -26,7 +30,7 @@ var_dump($_POST);
         <input type="text" name="categorie">
     </div>
     <div>
-        <label for="email">email : </label>
+        <label for="email"></h1>Email :</h1> </label>
         <input type="email" name="email">
     </div>
     <div>
