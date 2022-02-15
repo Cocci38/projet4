@@ -3,7 +3,6 @@
 </mj-head>
 <mj-style>
     {color:#fae5e7;
-    /*background:radial-gradient(45deg,#1b2125,#3c1823);*/
     background: radial-gradient(circle, rgba(172,66,73,1) 0% , rgba(27,33,37,1) 85% );
     background-position: -150px;}
 </mj-style>
