@@ -3,14 +3,13 @@ $annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' 
 require_once 'vendor/autoload.php';
 require_once 'annoncemjml.php';
 
-<<<<<<< HEAD
 //use \node_modules\Mjml\Renderer\BinaryRenderer;
 use \Qferrer\Mjml\Renderer\BinaryRenderer;
 $renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
-=======
-use \node_modules\Mjml\Renderer\BinaryRenderer;
+
+//use \node_modules\Mjml\Renderer\BinaryRenderer;
 $renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
->>>>>>> 5798c1dc309c8ad32921809f5580ab5ca685d6f1
+
 
     
 //$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
@@ -38,14 +37,6 @@ $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => false//__DIR__ . '/tmp'
 ]);
-
-
-
-
-
-
-
-
 
 if ($page === 'home') {
 
