@@ -29,18 +29,18 @@
 <mj-section background-color="#ac4249">
     <mj-column>
     <mj-text color="#fae5e7">
-            {{TITRE de L'ANNONCE}}
+            {{annonce.titreE}}
         </mj-text>
         <mj-text color="#fae5e7">
-            {{CATEGORIE}}
+            {{annonce.categorie}}
         </mj-text>
         <mj-text color="#fae5e7">
-            {{PRIX}}
+            {{annonce.prix}}
         </mj-text>    
     </mj-column>
     <mj-column>
         <mj-text color="#fae5e7">
-            {{DESCRIPTION}}
+            {{annonce.description}}
         </mj-text>
     </mj-column>
 </mj-section>
