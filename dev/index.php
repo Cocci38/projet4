@@ -4,26 +4,17 @@ require_once 'vendor/autoload.php';
 require_once 'annoncemjml.php';
 
 //use \node_modules\Mjml\Renderer\BinaryRenderer;
-use \Qferrer\Mjml\Renderer\BinaryRenderer;
-$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+//use \Qferrer\Mjml\Renderer\BinaryRenderer;
+///$renderer = new BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 //use \node_modules\Mjml\Renderer\BinaryRenderer;
-$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+//$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 
-    
+
 //$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
-$html = $renderer->render('
-    <mjml>
-        <mj-body>
-            <mj-section>
-                <mj-column>
-                    <mj-text>Hello world</mj-text>
-                </mj-column>
-            </mj-section>
-        </mj-body>
-    </mjml>
-');
+//$html = $renderer->render($annonceMJML);
+
 
 //routing
 $page = 'home';
@@ -58,13 +49,30 @@ if ($page === 'home') {
     ];
     /** Insertion de l'annonce */
 
-    //$annonceMJML = $twig->render('mail-add-update.twig', compact('annonce'));
+    //$annonceMJML = $twig->display('mail-add-update.twig', compact('annonce'));
 
-    //echo $twig->display('ajout.twig');
+    switch (@$_GET['statut']) {
+        case 'add':
+            echo $twig->display('ajout.twig', compact('annonces'));        # code...
+            break;
+
+        case 'edit':
+            echo $twig->display('details.twig', compact('annonces'));        # code...
+            break;
+
+        case 'up':
+            echo $twig->display('modifier.twig', compact('annonce'));        # code...
+            break;
+
+        default:
+            echo $twig->display('index.twig', compact('annonces'));        # code...
+            break;
+    }
+    //echo $twig->display('index.twig', compact('annonce'));
     //  $annonceHTML = $renderer->render($annonceMJML);
-    $annonceHTML = $renderer->render($annonceMJML);
-    $sujet = "mail de " . $annonce['etat'];
-    $desinataire = $annonce['mail'];
-    mail($destinaire, $sujet, $annonceHTML);
+    //$annonceHTML = $renderer->render('ajout.twig');
+    //$sujet = "mail de " . $annonce['etat'];
+    //$desinataire = $annonce['mail'];
+    //mail($destinaire, $sujet, $annonceHTML);
     
 }
