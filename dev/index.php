@@ -1,11 +1,18 @@
 <?php
-
+$annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@free.fr', 'etat' => 'Validation', 'id' => 02, 'description' => 'lorem,lorem,lorem,lorem'];
 require_once 'vendor/autoload.php';
+require_once 'annoncemjml.php';
 
+<<<<<<< HEAD
 //use \node_modules\Mjml\Renderer\BinaryRenderer;
 use \Qferrer\Mjml\Renderer\BinaryRenderer;
 $renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+=======
+use \node_modules\Mjml\Renderer\BinaryRenderer;
+$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+>>>>>>> 5798c1dc309c8ad32921809f5580ab5ca685d6f1
 
+    
 //$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 $html = $renderer->render('
     <mjml>
@@ -33,6 +40,13 @@ $twig = new \Twig\Environment($loader, [
 ]);
 
 
+
+
+
+
+
+
+
 if ($page === 'home') {
 
     $pagetitle = 'Accueil';
@@ -41,7 +55,7 @@ if ($page === 'home') {
         'prix' => 34
     ];
     $etat = null;
-    $annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@fee.fr', 'etat' => 'Validation', 'id' => 02];
+    
     $annonces = [
         ['titre' => 'brouette', 'prix' => 12, 'categorie' => 12, 'mail' => 12],
         ['titre' => 'camion', 'prix' => 34],
@@ -51,12 +65,15 @@ if ($page === 'home') {
         ['titre' => 'avion', 'prix' => 1454]
 
     ];
+    /** Insertion de l'annonce */
 
-    //$annonceMJML = $twig->display('mail-add-update.html.twig', compact('annonce'));
-    echo $twig->display('ajout.html.twig');
-    //$annonceHTML = $renderer->render($annonceMJML);
+    //$annonceMJML = $twig->render('mail-add-update.twig', compact('annonce'));
 
-
-    //mail($destinaire, $sujet, $annonceHTML);
+    //echo $twig->display('ajout.twig');
+    //  $annonceHTML = $renderer->render($annonceMJML);
+    $annonceHTML = $renderer->render($annonceMJML);
+    $sujet = "mail de " . $annonce['etat'];
+    $desinataire = $annonce['mail'];
+    mail($destinaire, $sujet, $annonceHTML);
     
 }
