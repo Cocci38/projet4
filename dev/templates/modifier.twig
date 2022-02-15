@@ -1,8 +1,20 @@
 {% extends "base.twig" %}
 {% block pagetitle %}modification d'une annonce
 {% endblock %}
+{% block header %}
+	<navbar baseurl="http://localhost/projet4/dev/">
+		<a href="http://localhost/projet4/dev/">LOGO</a>
+		<span>SLOGAN</span>
+		<a href="http://localhost/projet4/dev/">RETOUR</a>
+	</navbar>
+{% endblock %}
 
-{% block navbar %}{% endblock %}
+{% block recherche %}
+	<div class="recherche">
+	Nombre d'annonces enregistrées:{{compteur }}
+	</div>
+{% endblock %}
+
 {% block body %}
 	<form action="{{fichieradefinir.php}}" method="post">
 		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required value="{{annonce.titre}}">
@@ -24,5 +36,8 @@
 		<button type="submit">Modifier</button>
 		<button type="reset">Annuler</button>
 	</form>
+{% endblock %}
+{% block footer %}
+	<footer></footer>
 {% endblock %}
 

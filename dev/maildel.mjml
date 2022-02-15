@@ -6,7 +6,7 @@
     background: radial-gradient(circle, rgba(172,66,73,1) 0% , rgba(27,33,37,1) 85% );
     background-position: -150px;}
 </mj-style>
-<mj-title>mail</mj-title>
+<mj-title>Mail</mj-title>
 <mj-body color="#fae5e7" align="center">
 <!--Nav barre-->
 <mj-section background-color="#ac4249">

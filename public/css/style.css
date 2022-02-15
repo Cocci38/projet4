@@ -6,6 +6,17 @@ span {
   color: #fae5e7;
 }
 
+button {
+  margin: 10px;
+  padding: 10px;
+  color: #fae5e7;
+  background-color: #ac4249;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ac4249;
+  border-radius: 5px;
+}
+
 header, navbar, footer {
   height: 60px;
   background: radial-gradient(circle, #ac4249 0%, #1b2125 85%);
@@ -31,6 +42,27 @@ a:hover {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: repeat 200px;
   height: auto;
+  gap: 0px 0px;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+form {
+  margin: 10px;
+  padding: 10px;
+  color: #ac4249;
+  border: 2px solid #1b2125;
+  border-radius: 5px;
+  background-color: #fae5e7;
+}
+
+.card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8, .card9, .car10 {
+  margin: 10px;
+  padding: 10px;
+  color: #ac4249;
+  border: 2px solid #ac4249;
+  border-radius: 5px;
+  background-color: #fae5e7;
 }
 
 @media (max-width: 800px) {
@@ -43,21 +75,5 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
-/* .card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.car10
-   { grid-area: card1;
-    color: $corpstexte;
-    border: 2px solid $corpstexte;
-    background-color: $couleurtexte }
-
-
-.card{
-    color:  $corpstexte;
-    border: 2px solid $couleurtexte;
-    background-color: $bouton;
-    display: flex;
-    justify-content: space-evenly;
-
-
-}*/
 
 /*# sourceMappingURL=style.css.map */

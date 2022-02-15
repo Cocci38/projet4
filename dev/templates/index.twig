@@ -1,16 +1,19 @@
 {% extends "base.twig" %}
 {% block pagetitle %}Accueil
 {% endblock %}
-{% set compteur=1 %}
+
 {% block header %}
-	<navbar>
-		<a href="https://localhost/projet4/dev/">LOGO</a>
-		<span>SLOGAN<span>
+	<navbar baseurl="http://localhost/projet4/dev/">
+		<a href="http://localhost/projet4/dev/">LOGO</a>
+		<span>SLOGAN</span>
 		<a href="http://localhost/projet4/dev/?statut=add">AJOUT</a>
 	</navbar>
 {% endblock %}
+
 {% block recherche %}
-	Nombre d'annonces enregistrées:{{compteur }}
+	<div class="recherche">
+	Nombre d'annonces enregistrées:{{ element.compteur }}
+	</div>
 {% endblock %}
 
 
@@ -18,7 +21,7 @@
 {% block body %}
 <div class="container">
 
-
+{% set compteur=1 %}
 {% for annonce in annonces %}
 <div class="card{{loop.index}}">
 

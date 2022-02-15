@@ -11,6 +11,18 @@ body{
 span{
     color:$couleurtexte;
 }
+
+button{
+    margin:10px;
+    padding : 10px;
+    color: #fae5e7;
+    background-color:#ac4249;
+    align-items: center;
+    justify-content: center;;
+    border: 2px solid $fond;
+    border-radius:5px;
+    
+}
 header,navbar,footer{
     height:60px;
     background: radial-gradient(circle,$fond 0% , $corpstexte 85% );
@@ -38,10 +50,28 @@ a:hover{
     //grid-template-areas: 
     //    "card1 card2 card3 card4 card5"
     //    "card6 card7 card8 card9 card10"; 
-    //gap: 0px 0px; 
-    //justify-content:space-evenly;
-    //align-items: baseline;
+    gap: 0px 0px; 
+    justify-content:space-evenly;
+    align-items: baseline;
 }
+form{
+    margin:10px;
+    padding : 10px;
+    color: $fond;
+    
+    border: 2px solid #1b2125;
+    border-radius:5px;
+    background-color: $couleurtexte; }
+
+
+.card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.car10
+{   margin:10px;
+    padding : 10px;
+    color: $fond;
+    
+    border: 2px solid $fond;
+    border-radius:5px;
+    background-color: $couleurtexte; }
 
 @media (max-width:800px) {
     .container{grid-template-columns: 1fr 1fr;
@@ -53,19 +83,6 @@ a:hover{
     .container{grid-template-columns: 1fr;
     }
 }
-/* .card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.car10
-   { grid-area: card1;
-    color: $corpstexte;
-    border: 2px solid $corpstexte;
-    background-color: $couleurtexte }
+ 
   
 
-.card{
-    color:  $corpstexte;
-    border: 2px solid $couleurtexte;
-    background-color: $bouton;
-    display: flex;
-    justify-content: space-evenly;
-    
-
-}*/

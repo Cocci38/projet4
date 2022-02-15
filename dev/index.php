@@ -26,7 +26,7 @@ if (isset($_GET['p'])) {
 //rendu\
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
 $twig = new \Twig\Environment($loader, [
-    'cache' => false//__DIR__ . '/tmp'
+    'cache' => false
 ]);
 
 if ($page === 'home') {
@@ -37,27 +37,32 @@ if ($page === 'home') {
         'prix' => 34
     ];
     $etat = null;
-    
-    $annonces = [
-        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 12, 'mail' => 12],
-        ['titre' => 'camion', 'prix' => 34],
-        ['titre' => 'moto', 'prix' => 7889],
-        ['titre' => 'ambulance', 'prix' => 47],
-        ['titre' => 'landeau', 'prix' => 25],
-        ['titre' => 'avion', 'prix' => 1454]
 
+    $annonces = [
+        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 12],
+        ['titre' => 'camion', 'prix' => 344565],
+        ['titre' => 'moto', 'prix' => 7889],
+        ['titre' => 'ambulance', 'prix' => 4745],
+        ['titre' => 'landeau', 'prix' => 25],
+        ['titre' => 'avion', 'prix' => 1454],
+        ['titre' => 'bateau', 'prix' => 451454]
     ];
+
+    $compteur = count($annonces);
+    $element = compact('compteur');
+
+    
     /** Insertion de l'annonce */
 
     //$annonceMJML = $twig->display('mail-add-update.twig', compact('annonce'));
 
     switch (@$_GET['statut']) {
         case 'add':
-            echo $twig->display('ajout.twig', compact('annonces'));        # code...
+            echo $twig->display('ajout.twig'); 
             break;
 
         case 'edit':
-            echo $twig->display('details.twig', compact('annonces'));        # code...
+            echo $twig->display('details.twig', compact('annonce'));        # code...
             break;
 
         case 'up':
@@ -65,7 +70,8 @@ if ($page === 'home') {
             break;
 
         default:
-            echo $twig->display('index.twig', compact('annonces'));        # code...
+            $rendu = $twig->render('index.twig', $element);
+            $twig->display('index.twig', compact('annonces'));        # code...
             break;
     }
     //echo $twig->display('index.twig', compact('annonce'));
