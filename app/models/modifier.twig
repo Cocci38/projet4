@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+{% block pagetitle %}modification d'une annonce
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block body %}
+	<form action="{{fichieradefinir.php}}" method="post">
+		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required value="{{annonce.titre}}">
+		<input type="text" name="categorie" id="catégorie" placeholder="categorie" required value="{{ annonce.categorie }}">
+		<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required value="{{annonce.mail}}">
+		<input type="float" name="prix" id="prix" placeholder="prix" required value="{{ annonce.prix}}">
+		<textarea name="description" id="description" value="{{annonce.description}}">
+	{{annonce.description}}</textarea>
+
+
+		<input type="file" name="photo01" id="photo01">
+		<input type="file" name="photo02" id="photo01">
+		<input type="file" name="photo03" id="photo01">
+		<input type="file" name="photo04" id="photo01">
+		<input type="file" name="photo05" id="photo0">
+		<input type="file" name="photo06" id="photo06">
+
+
+		<button type="submit">Modifier</button>
+		<button type="reset">Annuler</button>
+	</form>
+{% endblock %}
+
