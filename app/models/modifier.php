@@ -1,7 +1,5 @@
-<?php 
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false//__DIR__ . '/tmp'
-]);
+<?php
+
 echo $twig->display('ajout.twig');
+
 ?>
