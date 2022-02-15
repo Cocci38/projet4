@@ -29,42 +29,42 @@
 <mj-section background-color="#ac4249">
     <mj-column>
     <mj-text color="#fae5e7">
-            {{TITRE de L'ANNONCE}}
+            {{annonce.titreE}}
         </mj-text>
         <mj-text color="#fae5e7">
-            {{CATEGORIE}}
+            {{annonce.categorie}}
         </mj-text>
         <mj-text color="#fae5e7">
-            {{PRIX}}
+            {{annonce.prix}}
         </mj-text>    
     </mj-column>
     <mj-column>
         <mj-text color="#fae5e7">
-            {{DESCRIPTION}}
+            {{annonce.description}}
         </mj-text>
     </mj-column>
 </mj-section>
 <mj-section background-color="#ac4249">
     <mj-column>
-       <mj-image src="http://localhost/projet4/img/{{PHOTO1}}" alt="{{PHOTO1}}" />
+       <mj-image src="http://localhost/projet4/img/{{annonce.photo1}}" alt="{{PHOTO1}}" />
     </mj-column>
     <mj-column>
-        <mj-image src="http://localhost/projet4/img/{{PHOTO2}}" alt="{{PHOTO2}}" />
+        <mj-image src="http://localhost/projet4/img/{{annonce.photo2}}" alt="{{PHOTO2}}" />
     </mj-column>  
     <mj-column>
-       <mj-image src="http://localhost/projet4/img/{{PHOTO3}}" alt="{{PHOTO3}}" />
+       <mj-image src="http://localhost/projet4/img/{{annonce.photo3}}" alt="{{PHOTO3}}" />
     </mj-column>
     <mj-column>
-        <mj-image src="http://localhost/projet4/img/{{PHOTO4}}" alt="{{PHOTO4}}" />
+        <mj-image src="http://localhost/projet4/img/{{annonce.photo4}}" alt="{{PHOTO4}}" />
     </mj-column>  
     <mj-column>
-        <mj-image src="http://localhost/projet4/img/{{PHOTO5}}" alt="{{PHOTO5}}" />
+        <mj-image src="http://localhost/projet4/img/{{annonce.photo5}}" alt="{{PHOTO5}}" />
     </mj-column>  
 </mj-section>    
 <mj-section background-color="#ac4249">
     <mj-column>
     <mj-button font-family="font-family: 'Montserrat', sans-serif;
-        font-family: 'Nunito', sans-serif;" background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=delete">VALIDER</mj-button>
+        font-family: 'Nunito', sans-serif;" background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=delete">SUPPRIMER</mj-button>
     </mj-column>            
 
 </mj-section>

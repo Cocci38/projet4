@@ -1,4 +1,6 @@
-gcomposer.json
+composer.json
 composer.lock
 .htaccess
+node_modules/
 altorouter/
+vendor/
