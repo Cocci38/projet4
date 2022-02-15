@@ -2,20 +2,39 @@
 {% block pagetitle %}Accueil
 {% endblock %}
 {% set compteur=1 %}
+{% block header %}
+	<navbar>
+		<a href="https://localhost/projet4/dev/">LOGO</a>
+		<span>SLOGAN<span>
+		<a href="http://localhost/projet4/dev/?statut=add">AJOUT</a>
+	</navbar>
+{% endblock %}
+{% block recherche %}
+	Nombre d'annonces enregistrées:{{compteur }}
+{% endblock %}
+
 
 
 {% block body %}
-	<h1>Mes annonces</h1>
-{% for annonce in annonces %}
-
-
-
 <div class="container">
 
+
+{% for annonce in annonces %}
+<div class="card{{loop.index}}">
+
+
 <h1>{{ loop.index}}.{{ annonce.titre }}</h1>
-	<h2>{{ annonce.prix }}€</h2>
+<h2>{{ annonce.prix }}€</h2>
+
 
 {% set compteur = compteur+1 %}</div>{% endfor %}
+</div>
+
 
 {% endblock %}
+{% block footer %}
+	<footer></footer>
+{% endblock %}
+
+
 

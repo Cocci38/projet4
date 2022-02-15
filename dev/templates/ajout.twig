@@ -1,8 +1,16 @@
 {% extends "base.twig" %}
-{% block pagetitle %}ajout d'une Annonce
+{% block pagetitle %}Ajout d'une Annonce
+{% endblock %}
+{% set compteur=1 %}
+{% block header %}
+	<navbar baseurl="http://localhost/projet4/dev/">
+		<a href="http://localhost/projet4/dev/">LOGO</a>
+		<span>SLOGAN</span>
+		<a href="http://localhost/projet4/dev/">RETOUR</a>
+	</navbar>
 {% endblock %}
 
-{% block navbar %}{% endblock %}
+
 {% block body %}
 	<form action="" method="post">
 		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required>
@@ -20,5 +28,8 @@
 		<button type="submit">Envoyer</button>
 		<button type="reset">Annuler</button>
 	</form>
+{% endblock %}
+{% block footer %}
+	<footer></footer>
 {% endblock %}
 

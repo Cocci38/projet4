@@ -4,35 +4,68 @@ $bouton :#3c1823;
 $couleurtexte  :#fae5e7;  
 
 body{
-    color: $couleurtexte;
+    color: $fond;
+   
 }
-header,footer{
+
+span{
+    color:$couleurtexte;
+}
+header,navbar,footer{
+    height:60px;
     background: radial-gradient(circle,$fond 0% , $corpstexte 85% );
     background-position: -150px;
+    align-items: center;
     justify-content: space-evenly;
     display: flex;
     
 }
+
 a{
 color: $couleurtexte;
 text-decoration: none;
 }
 a:hover{
-    color:$bouton;
+    color:$fond;
     text-decoration: none;
 }
 .container{
-    border: 2px $corpstexte;
+    display : grid;
     background-color: $couleurtexte;
-    display : flex;
-    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: repeat 200px;
+    height: auto; 
+    //grid-template-areas: 
+    //    "card1 card2 card3 card4 card5"
+    //    "card6 card7 card8 card9 card10"; 
+    //gap: 0px 0px; 
+    //justify-content:space-evenly;
+    //align-items: baseline;
+}
+
+@media (max-width:800px) {
+    .container{grid-template-columns: 1fr 1fr;
+         
+     }
     
 }
+@media (max-width:200px){
+    .container{grid-template-columns: 1fr;
+    }
+}
+/* .card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.car10
+   { grid-area: card1;
+    color: $corpstexte;
+    border: 2px solid $corpstexte;
+    background-color: $couleurtexte }
+  
+
 .card{
-    border: 2px $corpstexte;
-    background-color: $fond;
+    color:  $corpstexte;
+    border: 2px solid $couleurtexte;
+    background-color: $bouton;
     display: flex;
     justify-content: space-evenly;
     
 
-}
+}*/
