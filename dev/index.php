@@ -1,7 +1,8 @@
 <?php
 
 require_once 'vendor/autoload.php';
-
+$annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@free.fr', 'etat' => 'Validation', 'id' => 02, 'description' => 'lorem,lorem,lorem,lorem'];
+require_once 'annoncemjml.php';
 
 use \node_modules\Mjml\Renderer\BinaryRenderer;
 $renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
@@ -23,6 +24,13 @@ $twig = new \Twig\Environment($loader, [
 ]);
 
 
+
+
+
+
+
+
+
 if ($page === 'home') {
 
     $pagetitle = 'Accueil';
@@ -31,7 +39,7 @@ if ($page === 'home') {
         'prix' => 34
     ];
     $etat = null;
-    $annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@fee.fr', 'etat' => 'Validation', 'id' => 02];
+    
     $annonces = [
         ['titre' => 'brouette', 'prix' => 12, 'categorie' => 12, 'mail' => 12],
         ['titre' => 'camion', 'prix' => 34],
@@ -43,9 +51,10 @@ if ($page === 'home') {
     ];
     /** Insertion de l'annonce */
 
-    $annonceMJML = $twig->render('mail-add-update.twig', compact('annonce'));
-    
-    echo $twig->display('ajout.twig');
+    //$annonceMJML = $twig->render('mail-add-update.twig', compact('annonce'));
+
+    //echo $twig->display('ajout.twig');
+    //  $annonceHTML = $renderer->render($annonceMJML);
     $annonceHTML = $renderer->render($annonceMJML);
     $sujet = "mail de " . $annonce['etat'];
     $desinataire = $annonce['mail'];
