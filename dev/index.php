@@ -68,7 +68,12 @@ if ($page === 'home') {
         case 'up':
             echo $twig->display('modifier.twig', compact('annonce'));        # code...
             break;
-
+        case 'val':
+            echo  $twig->display('confirm.twig', compact('annonce'));        # code...
+            break;
+        case  "del":
+            echo $twig->display('delete.twig', compact('annonce'));        # code...
+            break;
         default:
             $rendu = $twig->render('index.twig', $element);
             $twig->display('index.twig', compact('annonces'));        # code...
