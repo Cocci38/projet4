@@ -1,6 +1,6 @@
 <mjml>
-<mj-body>
-    <mj-section background-color="#ac4249">
+<mj-body background-color="#ac4249">
+    <mj-section >
   <mj-column>
     <mj-navbar base-url="https://localhot/projet4/dev/" hamburger="hamburger" ico-color="#fae5e7">
       <mj-navbar-link href="https://locahot/projet4/dev/index.php" color="#ffffff">Logo</mj-navbar-link>
@@ -8,14 +8,14 @@
     </mj-navbar>
   </mj-column>
 </mj-section>
-<mj-section background-color="#ac4249">
+<mj-section>
   <mj-column>
     <mj-text color="#fae5e7">
       <h1>Récapitulatif Annonce Postée</h1>
     </mj-text>
   </mj-column>
 </mj-section>
-<mj-section background-color="#ac4249">
+<mj-section>
   <mj-column>
     <mj-text color="#fae5e7">
       {{TITRE de L ANNONCE}}
@@ -33,7 +33,7 @@
     </mj-text>
   </mj-column>
 </mj-section>
-<mj-section background-color="#ac4249">
+<mj-section>
   <mj-column>
     <mj-image src="http://localhost/projet4/img/{{PHOTO1}}" alt="{{PHOTO1}}" />
   </mj-column>
@@ -50,7 +50,7 @@
     <mj-image src="http://localhost/projet4/img/{{PHOTO5}}" alt="{{PHOTO5}}" />
   </mj-column>
 </mj-section>
- <mj-section background-color="#ac4249">
+ <mj-section>
   <mj-column>
     <mj-button background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=confirm">VALIDER</mj-button>
   </mj-column>

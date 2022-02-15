@@ -1,7 +1,6 @@
 <?php
-
-require_once 'vendor/autoload.php';
 $annonce = ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@free.fr', 'etat' => 'Validation', 'id' => 02, 'description' => 'lorem,lorem,lorem,lorem'];
+require_once 'vendor/autoload.php';
 require_once 'annoncemjml.php';
 
 use \node_modules\Mjml\Renderer\BinaryRenderer;
