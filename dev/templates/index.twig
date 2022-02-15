@@ -6,18 +6,16 @@
 
 {% block body %}
 	<h1>Mes annonces</h1>
-	{% for annonce in annonces %}
-<div>
+{% for annonce in annonces %}
 
 
-<h1>{{ loop.index}}
 
-		{{ annonce.titre }}</h1>
+<div class="container">
+
+<h1>{{ loop.index}}.{{ annonce.titre }}</h1>
 	<h2>{{ annonce.prix }}€</h2>
 
-{% set compteur = compteur+1 %}</div>
+{% set compteur = compteur+1 %}</div>{% endfor %}
 
-
-	{% endfor %}
 {% endblock %}
 

@@ -1,0 +1,36 @@
+body {
+  color: #fae5e7;
+}
+
+header, footer {
+  background: radial-gradient(circle, #ac4249 0%, #1b2125 85%);
+  background-position: -150px;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+a {
+  color: #fae5e7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3c1823;
+  text-decoration: none;
+}
+
+.container {
+  border: 2px #1b2125;
+  background-color: #fae5e7;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 2px #1b2125;
+  background-color: #ac4249;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*# sourceMappingURL=style.css.map */

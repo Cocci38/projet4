@@ -23,5 +23,16 @@ a:hover{
 }
 .container{
     border: 2px $corpstexte;
-    background-color: #fae5e7;
+    background-color: $couleurtexte;
+    display : flex;
+    justify-content: space-evenly;
+    
+}
+.card{
+    border: 2px $corpstexte;
+    background-color: $fond;
+    display: flex;
+    justify-content: space-evenly;
+    
+
 }
