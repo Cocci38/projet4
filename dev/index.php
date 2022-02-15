@@ -2,9 +2,22 @@
 
 require_once 'vendor/autoload.php';
 
-use \node_modules\Mjml\Renderer\BinaryRenderer;
+//use \node_modules\Mjml\Renderer\BinaryRenderer;
+use \Qferrer\Mjml\Renderer\BinaryRenderer;
+$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 //$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+$html = $renderer->render('
+    <mjml>
+        <mj-body>
+            <mj-section>
+                <mj-column>
+                    <mj-text>Hello world</mj-text>
+                </mj-column>
+            </mj-section>
+        </mj-body>
+    </mjml>
+');
 
 //routing
 $page = 'home';
