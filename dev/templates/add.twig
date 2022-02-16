@@ -13,39 +13,53 @@
 
 {% block recherche %}{% endblock %}
 {% block body %}
-	<form action="" method="post">
-		<div class="card">
-			<label for="titre">Titre:
-			</label>
-			<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required>
-			<label for="categorie">Catégorie:
-			</label>
-			<input type="text" name="categorie" id="catégorie" placeholder="categorie" required>
-			<label for="prix">Prix:
-			</label>
-			<input type="float" name="prix" id="prix" placeholder="prix" required>
-		</div>
-		<div class="card">
-			<label width="200" for="description">Description:</label>
-			<textarea type="description" name="description" id="description">Description de l'annonce</textarea>
-			<label for="mail">Email:</label>
-			<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required>
-		</div>
-		<div class="container">
-			{% for i in 1..5%}
-				<div class="card">
-					<label for="image{{i}}">Photo:
-					</label>
-					<input type="file" name="image{{ i }}" id="image{{i}}" onchange="">
-				</div>
-			{% endfor %}
-			<div class="button">
-				<button type="submit">Envoyer</button>
-				<button type="reset">Annuler</button>
-			</div>
-		</form>
+<form action="" method="post" url="/upload-picture" enctype="multipart/form-data">
+	<div class="card">
+		<label for="titre">Titre:
+		</label>
+		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required>
+		<label for="categorie">Catégorie:
+		</label>
+		<input type="text" name="categorie" id="catégorie" placeholder="categorie" required>
+		<label for="prix">Prix:
+		</label>
+
+<input type="number" name="prix" id="prix" placeholder="prix" required></div><div class="card">
+<label width="200" for="description">Description:</label>
+<textarea type="description" name="description" id="description">Description de l'annonce</textarea>
+<label for="mail">Email:</label>
+
+<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required></div><div class="container">
+
+{% for i in 1..5 %}
+	<div class="card{{i}}">
+		<label for="image{{i}}">Photo:</label>
+		<input type="file" onchange="handleFiles{{i}}(files)" id="upload{{i}}" name="image{{i}}">
 	</div>
+
+{% endfor %}</div><div class="container">
+{% for i in 1..5 %}
+	<div class="card{{i}}">
+		<label for="upload{{i}}">
+			<span id="preview{{i}}"><img src="../public/img/vide.jpg" alt="vide" srcset=""></span>
+		</label>
+
+</div>{% endfor %}</div>
+
+<div class="button">
+	<button type="submit">Envoyer</button>
+	<button type="reset">Annuler</button>
+
+</div></form>
+
+
 {% endblock %}
+{% block script %}
+
+	<script src="../public/js/script.js"></script>
+{% endblock %}
+
+
 {% block footer %}
 	<footer></footer>
 {% endblock %}

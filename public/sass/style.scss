@@ -3,6 +3,32 @@ $degrade :#1b2125;
 $bouton :#3c1823;
 $texte  :#fae5e7;  
 
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#preview1,#preview2,#preview3,#preview4,#preview5{
+    width: 150px;
+    display: inline-block;
+  }
+  
+#preview1 img{
+    width: 100%;
+  }
+#preview2 img{
+    width: 100%;
+  }
+  #preview3 img{
+    width: 100%;
+  }
+  #preview4 img{
+    width: 100%;
+  }
+  #preview5 img{
+    width: 100%;
+  }
 html,body{
     height: 100%;
     color: $bouton;
