@@ -4,9 +4,13 @@
 
 {% block header %}
 	<navbar baseurl="http://localhost/projet4/dev/">
-		<a href="http://localhost/projet4/dev/">LOGO</a>
+<a class="nav" href="http://localhost/projet4/dev/">LOGO</a>
+
+
 		<span>SLOGAN</span>
-		<a href="http://localhost/projet4/dev/?statut=add">AJOUT</a>
+<a class="nav" href="http://localhost/projet4/dev/?statut=add">AJOUT</a>
+
+
 	</navbar>
 {% endblock %}
 
@@ -23,14 +27,22 @@
 
 {% set compteur=1 %}
 {% for annonce in annonces %}
+<a href="http://localhost/projet4/dev/?id={{annonce.id}}&statut=edit">
+
+
 <div class="card{{loop.index}}">
+
+<img src="http://localhost/projet4/public/img/{{annonce.image1}}" alt="image{{loop.index}}" width="150px">
+
 
 
 <h1>{{ loop.index}}.{{ annonce.titre }}</h1>
 <h2>{{ annonce.prix }}€</h2>
 
 
-{% set compteur = compteur+1 %}</div>{% endfor %}
+{% set compteur = compteur+1 %}</div></a>{% endfor %}
+
+
 </div>
 
 

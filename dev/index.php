@@ -39,13 +39,14 @@ if ($page === 'home') {
     $etat = null;
 
     $annonces = [
-        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 12],
-        ['titre' => 'camion', 'prix' => 344565],
-        ['titre' => 'moto', 'prix' => 7889],
-        ['titre' => 'ambulance', 'prix' => 4745],
-        ['titre' => 'landeau', 'prix' => 25],
-        ['titre' => 'avion', 'prix' => 1454],
-        ['titre' => 'bateau', 'prix' => 451454]
+        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@free.fr', 'image1' => 'mcd.jpg', 'id'=>1],
+        ['titre' => 'camion', 'prix' => 344565, 'categorie' => 'vehicule', 'mail' => 'hello@free.fr', 'image1' => 'mcd.jpg','id'=>2],
+        ['titre' => 'moto', 'prix' => 7889, 'categorie' => 'vehicule', 'mail' => 'jk@free.fr', 'image1' => 'mcd.jpg','id'=>3],
+        ['titre' => 'ambulance', 'prix' => 4745, 'categorie' => 'vehicule', 'mail' => 'kj@free.fr', 'image1' => 'mcd.jpg','id'=>4],
+        ['titre' => 'landeau', 'prix' => 25, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'mcd.jpg','id'=>5],
+        ['titre' => 'avion', 'prix' => 1454, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'mcd.jpg','id'=>6],
+        ['titre' => 'bateau', 'prix' => 451454, 'categorie' => 'vehicule', 'mail' => 'bonbon@free.fr', 'image1' => '','id'=>7],
+        ['titre' => 'tonneau', 'prix' => 44, 'categorie' => 'objet', 'mail' => 'bonbon@free.fr', 'image1' => '','id'=>8]
     ];
 
     $compteur = count($annonces);
@@ -62,6 +63,7 @@ if ($page === 'home') {
             break;
 
         case 'edit':
+            
             echo $twig->display('details.twig', compact('annonce'));        # code...
             break;
 

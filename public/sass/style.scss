@@ -1,21 +1,25 @@
 $fond: #ac4249;
-$corpstexte :#1b2125;
+$degrade :#1b2125;
 $bouton :#3c1823;
-$couleurtexte  :#fae5e7;  
+$texte  :#fae5e7;  
 
 body{
-    color: $fond;
-   
+    color: $bouton;
 }
 
 span{
-    color:$couleurtexte;
+    color:$texte;
+}
+
+a{
+    color:$texte;
+    text-decoration: none;
 }
 
 button{
     margin:10px;
     padding : 10px;
-    color: #fae5e7;
+    color: $bouton;
     background-color:#ac4249;
     align-items: center;
     justify-content: center;;
@@ -25,7 +29,7 @@ button{
 }
 header,navbar,footer{
     height:60px;
-    background: radial-gradient(circle,$fond 0% , $corpstexte 85% );
+    background: radial-gradient(circle,$fond 0% , $degrade 85% );
     background-position: -150px;
     align-items: center;
     justify-content: space-evenly;
@@ -33,17 +37,18 @@ header,navbar,footer{
     
 }
 
-a{
-color: $couleurtexte;
+.nav {
+color: $texte;
 text-decoration: none;
-}
-a:hover{
+&:hover{
     color:$fond;
     text-decoration: none;
 }
+}
+
 .container{
     display : grid;
-    background-color: $couleurtexte;
+    background-color: $texte;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: repeat 200px;
     height: auto; 
@@ -61,7 +66,7 @@ form{
     
     border: 2px solid #1b2125;
     border-radius:5px;
-    background-color: $couleurtexte; }
+    background-color: $texte; }
 
 
 .card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.car10
@@ -71,7 +76,7 @@ form{
     
     border: 2px solid $fond;
     border-radius:5px;
-    background-color: $couleurtexte; }
+    background-color: $texte; }
 
 @media (max-width:800px) {
     .container{grid-template-columns: 1fr 1fr;
