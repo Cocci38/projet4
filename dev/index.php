@@ -59,21 +59,21 @@ if ($page === 'home') {
 
     switch (@$_GET['statut']) {
         case 'add':
-            echo $twig->display('ajout.twig'); 
+            echo $twig->display('add.twig'); 
             break;
 
         case 'edit':
-            $annonce = $annonces[$_GET['id'] - 1];
-            echo $twig->display('details.twig', compact('annonce'));        # code...
+            $annonce = $annonces[@$_GET['id'] - 1];
+            echo $twig->display('show.twig', compact('annonce'));        # code...
             break;
 
         case 'up':
             $annonce = $annonces[$_GET['id'] - 1];
-            echo $twig->display('modifier.twig', compact('annonce'));        # code...
+            echo $twig->display('update.twig', compact('annonce'));        # code...
             break;
         case 'val':
             $annonce = $annonces[$_GET['id'] - 1];
-            echo  $twig->display('confirmation.twig', compact('annonce'));        # code...
+            echo  $twig->display('confirm.twig', compact('annonce'));        # code...
             break;
         case  'del':
             $annonce = $annonces[$_GET['id'] - 1];

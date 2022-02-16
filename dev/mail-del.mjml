@@ -11,9 +11,9 @@
 <!--Nav barre-->
 <mj-section background-color="#ac4249">
     <mj-column>
-            <mj-navbar base-url="https://localhot/projet4/dev/" hamburger="hamburger" ico-color="#fae5e7">
-                <mj-navbar-link href="/try-it-live" color="#ffffff">Logo</mj-navbar-link>
-                <mj-navbar-link href="https://localhot/projet4/dev/?etat=add" color="#fae5e7">Slogan</mj-navbar-link>
+            <mj-navbar base-url="http://localhot/projet4/dev/" hamburger="hamburger" ico-color="#fae5e7">
+                <mj-navbar-link href="http://localhost/projet4/dev" color="#ffffff">Logo</mj-navbar-link>
+                <mj-navbar-link href="http://localhot/projet4/dev/?etat=add" color="#fae5e7">Slogan</mj-navbar-link>
             </mj-navbar>
     </mj-column>
 </mj-section>
@@ -28,7 +28,7 @@
 <mj-section background-color="#ac4249">
     <mj-column>
     <mj-text color="#fae5e7">
-            {{annonce.titreE}}
+            {{annonce.titre}}
         </mj-text>
         <mj-text color="#fae5e7">
             {{annonce.categorie}}
@@ -45,25 +45,25 @@
 </mj-section>
 <mj-section background-color="#ac4249">
     <mj-column>
-       <mj-image src="http://localhost/projet4/img/{{annonce.photo1}}" alt="{{PHOTO1}}" />
+       <mj-image src="http://localhost/projet4/public/img/{{annonce.photo1}}" alt="PHOTO1" />
     </mj-column>
     <mj-column>
-        <mj-image src="http://localhost/projet4/img/{{annonce.photo2}}" alt="{{PHOTO2}}" />
+        <mj-image src="http://localhost/projet4/public/img/{{annonce.photo2}}" alt="PHOTO2" />
     </mj-column>  
     <mj-column>
-       <mj-image src="http://localhost/projet4/img/{{annonce.photo3}}" alt="{{PHOTO3}}" />
+       <mj-image src="http://localhost/projet4/public/img/{{annonce.photo3}}" alt="PHOTO3" />
     </mj-column>
     <mj-column>
-        <mj-image src="http://localhost/projet4/img/{{annonce.photo4}}" alt="{{PHOTO4}}" />
+        <mj-image src="http://localhost/projet4/public/img/{{annonce.photo4}}" alt="PHOTO4" />
     </mj-column>  
     <mj-column>
-        <mj-image src="http://localhost/projet4/img/{{annonce.photo5}}" alt="{{PHOTO5}}" />
+        <mj-image src="http://localhost/projet4/public/img/{{annonce.photo5}}" alt="PHOTO5" />
     </mj-column>  
 </mj-section>    
 <mj-section background-color="#ac4249">
     <mj-column>
     <mj-button font-family="font-family: 'Montserrat', sans-serif;
-        font-family: 'Nunito', sans-serif;" background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=delete">SUPPRIMER</mj-button>
+        font-family: 'Nunito', sans-serif;" background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{annonce.id}}&etat=delete">SUPPRIMER</mj-button>
     </mj-column>            
 
 </mj-section>

@@ -36,31 +36,33 @@
 		{{annonce.mail}}
 	</div>
 	<div class="container">
-		<div class="card">
-			<label for="Photo1">Photo:
-			</label>
-			<img src="localhost/projet4/img/{{annonce.image1}}" alt="image1" with="150px">
-		</div>
+
 		<div class="card">
 			<label for="Photo2">Photo:
 			</label>
-			<img src="localhost/projet4/img/{{annonce.image2}}" alt="image2" with="150px">
+<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image2 ? annonce.image2: 'vide.jpg'}}" alt="image2">
+
+
 		</div>
 		<div class="card">
 			<label for="Photo3">Photo:
 			</label>
-			<img src="localhost/projet4/img/{{annonce.image3}}" alt="image3" with="150px">
+<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image3 ? annonce.image3: 'vide.jpg'}}" alt="image3">
+
+
 		</div>
 		<div class="card">
 			<label for="Photo4">Photo:
 			</label>
-			<img src="localhost/projet4/img/{{annonce.image4}}" alt="image4" with="150px">
+<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image4 ? annonce.image4: 'vide.jpg'}}" alt="image4">
+
+
 		</div>
 		<div class="card">
 			<label for="Photo5">Photo:
 			</label>
-			<img src="localhost/projet4/img/{{annonce.image5}}" alt="image5" with="150px">
-		</div>
+<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image5 ? annonce.image5: 'vide.jpg'}}" alt="image5"></div>
+
 		<div class="button">
 			<button type="submit">Suppression</button>
 		</div>

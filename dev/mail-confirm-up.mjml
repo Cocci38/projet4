@@ -18,44 +18,44 @@
 <mj-section>
   <mj-column>
     <mj-text color="#fae5e7">
-      {{TITRE de L ANNONCE}}
+      {{annonce.titre}}
     </mj-text>
     <mj-text color="#fae5e7">
-      {{CATEGORIE}}
+      {{annonce.categorie}}
     </mj-text>
     <mj-text color="#fae5e7">
-      {{PRIX}}
+      {{annonce.prix}}
     </mj-text>
   </mj-column>
   <mj-column>
     <mj-text color="#fae5e7">
-      {{DESCRIPTION}}
+      {{annonce.description}}
     </mj-text>
   </mj-column>
 </mj-section>
 <mj-section>
   <mj-column>
-    <mj-image src="http://localhost/projet4/img/{{PHOTO1}}" alt="{{PHOTO1}}" />
+    <mj-image src="http://localhost/projet4/public/img/{{annonce.image5}}" alt="PHOTO1" />
   </mj-column>
   <mj-column>
-    <mj-image src="http://localhost/projet4/img/{{PHOTO2}}" alt="{{PHOTO2}}" />
+    <mj-image src="http://localhost/projet4/public/img/{{annonce.image5}}" alt="PHOTO2" />
   </mj-column>
   <mj-column>
-    <mj-image src="http://localhost/projet4/img/{{PHOTO3}}" alt="{{PHOTO3}}" />
+    <mj-image src="http://localhost/projet4/public/img/{{annonce.image5}}" alt="PHOTO3" />
   </mj-column>
   <mj-column>
-    <mj-image src="http://localhost/projet4/img/{{PHOTO4}}" alt="{{PHOTO4}}" />
+    <mj-image src="http://localhost/projet4/public/img/{{annonce.image5}}" alt="PHOTO4" />
   </mj-column>
   <mj-column>
-    <mj-image src="http://localhost/projet4/img/{{PHOTO5}}" alt="{{PHOTO5}}" />
+    <mj-image src="http://localhost/projet4/public/img/{{annonce.image5}}" alt="PHOTO5" />
   </mj-column>
 </mj-section>
  <mj-section>
   <mj-column>
-    <mj-button background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=confirm">VALIDER</mj-button>
+    <mj-button background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{annonce.id}}&etat=confirm">VALIDER</mj-button>
   </mj-column>
   <mj-column>
-    <mj-button background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{IDdelANNONCE}}&etat=update">MODIFIER</mj-button>
+    <mj-button background-color="#3c1823" color="#fae5e7" href="http://localhost/projet4/dev/?id={{annonce.id}}&etat=update">MODIFIER</mj-button>
   </mj-column>
 </mj-section>
 </mj-body>

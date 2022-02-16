@@ -1,0 +1,78 @@
+{% extends "base.twig" %}
+{% block pagetitle %}Confirmation d'enrgistement de l'annonce
+
+{% endblock %}
+{% block header %}
+	<navbar baseurl="http://localhost/projet4/dev/">
+		<a href="http://localhost/projet4/dev/">LOGO</a>
+		<span>SLOGAN</span>
+		<a href="http://localhost/projet4/dev/">RETOUR</a>
+	</navbar>
+{% endblock %}
+
+
+
+{% block navbar %}{% endblock %}
+{% block body %}
+<div class="container">
+
+
+	<form action="" method="post">
+<h1>Veuillez Confirmer l'enregistrement de l'annonce N°:{{annonce.id}}</h1>
+<div class="card">
+	<label for="titre">Titre:
+	</label>
+	{{annonce.titre}}
+	<label for="categorie">Catégorie:
+	</label>
+	{{annonce.categorie}}
+	<label for="prix">Prix:
+	</label>
+	{{annonce.prix}}
+</div>
+<div class="card">
+	<label for="description">Description:</label>
+	{{annonce.decription}}
+	<label for="mail">Email:</label>
+	{{annonce.mail}}</div>
+<div class="card">
+	<label for="image1">Photo:</label>
+	<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image1 ? annonce.image1: 'vide.jpg'}}" alt="image1">
+</div>
+<div class="card">
+	<label for="image2">Photo:
+	</label>
+	<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image2 ? annonce.image2: 'vide.jpg'}}" alt="image2">
+</div>
+<div class="card">
+	<label for="Photo3">Photo:
+	</label>
+	<img class="vignette" src="http://localhost/projet4/public/img/{{ annonce.image3 ? annonce.image3: 'vide.jpg'}}" alt="image3">
+</div>
+<div class="card">
+	<label for="Photo4">Photo:
+	</label>
+	<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image4 ? annonce.image4:'vide.jpg'}}" alt="image4">
+</div>
+<div class="card">
+	<label for="Photo5">Photo:
+	</label>
+	<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image5 ? annonce.image5: 'vide.jpg'}}" alt="image5">
+
+
+
+		<input type="hidden" name="id" value="{{annonce.id}}">
+		<input type="hidden" name="mail" value="{{annonce.mail}}">
+		<input type="hidden" name=" etat" value="{{annonce.etat}}">
+</div>
+<div class="card">
+	<button type="submit">Confirmation</button>
+</div>
+
+
+	</form>
+</div>{% endblock %}{% block footer %}
+<footer></footer>{% endblock %}
+
+
+
