@@ -4,12 +4,10 @@ require_once 'vendor/autoload.php';
 require_once 'annoncemjml.php';
 
 //use \node_modules\Mjml\Renderer\BinaryRenderer;
-//use \Qferrer\Mjml\Renderer\BinaryRenderer;
+use \Qferrer\Mjml\Renderer\BinaryRenderer;
 ///$renderer = new BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
 
 //use \node_modules\Mjml\Renderer\BinaryRenderer;
-//$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
-
 
 
 //$renderer = BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
@@ -61,30 +59,33 @@ if ($page === 'home') {
         case 'mail':
             $annonce = $annonces[@$_GET['id'] - 1];
             echo $twig->display('mail-add-update.twig', compact('annonce'));
+            $renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+            ob_start();
+            require "annoncemjml.php";
+            $annonceMJML=ob_get_clean();
+            $annonceHTML = $renderer->render('ajout.twig',compact(''));
             break;
         case 'add':
             echo $twig->display('add.twig'); 
             break;
-
         case 'edit':
             $annonce = $annonces[@$_GET['id'] - 1];
             echo $twig->display('show.twig', compact('annonce'));        # code...
             break;
 
         case 'up':
-            $annonce = $annonces[$_GET['id'] - 1];
+            $annonce = $annonces[@$_GET['id'] - 1];
             echo $twig->display('update.twig', compact('annonce'));        # code...
             break;
         case 'val':
-            $annonce = $annonces[$_GET['id'] - 1];
+            $annonce = $annonces[@$_GET['id'] - 1];
             echo  $twig->display('confirm.twig', compact('annonce'));        # code...
             break;
         case  'del':
-            $annonce = $annonces[$_GET['id'] - 1];
+            $annonce = $annonces[@$_GET['id'] - 1];
             echo $twig->display('delete.twig', compact('annonce'));        # code...
             break;
         default:
-            $rendu = $twig->render('index.twig', $element);
             $twig->display('index.twig', compact('annonces'));        # code...
             break;
     }
