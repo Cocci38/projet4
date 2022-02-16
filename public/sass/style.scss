@@ -3,7 +3,8 @@ $degrade :#1b2125;
 $bouton :#3c1823;
 $texte  :#fae5e7;  
 
-body{
+html,body{
+    height: 100%;
     color: $bouton;
 }
 
@@ -15,11 +16,16 @@ a{
     color:$texte;
     text-decoration: none;
 }
+a:hover{
+    color:$fond;
+    text-decoration: none;
+}
 
 button{
     margin:10px;
     padding : 10px;
-    color: $bouton;
+    color: $texte;
+    size-adjust: 1fr;
     background-color:#ac4249;
     align-items: center;
     justify-content: center;;
@@ -27,7 +33,7 @@ button{
     border-radius:5px;
     
 }
-header,navbar,footer{
+header,navbar{
     height:60px;
     background: radial-gradient(circle,$fond 0% , $degrade 85% );
     background-position: -150px;
@@ -37,6 +43,18 @@ header,navbar,footer{
     
 }
 
+footer{
+    position:absolute;
+    background: radial-gradient(circle,$fond 0% , $degrade 85% );
+    background-position: -150px;
+    bottom:0;
+    width:100%;
+    padding-top:50px;
+    height:30px;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
 .nav {
 color: $texte;
 text-decoration: none;
@@ -68,9 +86,23 @@ form{
     border-radius:5px;
     background-color: $texte; }
 
+img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
 
+.vignette{
+    width:200px;
+    height:100px;
+    background-size: cover;
+}
 .card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.car10
-{   margin:10px;
+{   object-fit: contain;
+    background-size: cover;
+    max-width: 100%;
+    height:auto;
+    margin:10px;
     padding : 10px;
     color: $fond;
     

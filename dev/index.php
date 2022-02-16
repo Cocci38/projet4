@@ -39,14 +39,14 @@ if ($page === 'home') {
     $etat = null;
 
     $annonces = [
-        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@free.fr', 'image1' => 'mcd.jpg', 'id'=>1],
-        ['titre' => 'camion', 'prix' => 344565, 'categorie' => 'vehicule', 'mail' => 'hello@free.fr', 'image1' => 'mcd.jpg','id'=>2],
-        ['titre' => 'moto', 'prix' => 7889, 'categorie' => 'vehicule', 'mail' => 'jk@free.fr', 'image1' => 'mcd.jpg','id'=>3],
-        ['titre' => 'ambulance', 'prix' => 4745, 'categorie' => 'vehicule', 'mail' => 'kj@free.fr', 'image1' => 'mcd.jpg','id'=>4],
-        ['titre' => 'landeau', 'prix' => 25, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'mcd.jpg','id'=>5],
-        ['titre' => 'avion', 'prix' => 1454, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'mcd.jpg','id'=>6],
-        ['titre' => 'bateau', 'prix' => 451454, 'categorie' => 'vehicule', 'mail' => 'bonbon@free.fr', 'image1' => '','id'=>7],
-        ['titre' => 'tonneau', 'prix' => 44, 'categorie' => 'objet', 'mail' => 'bonbon@free.fr', 'image1' => '','id'=>8]
+        ['titre' => 'brouette', 'prix' => 12, 'categorie' => 'objet', 'mail' => 'jkasperski@free.fr', 'image1' => 'brouette.jpeg', 'id' => 1],
+        ['titre' => 'camion', 'prix' => 344565, 'categorie' => 'vehicule', 'mail' => 'hello@free.fr', 'image1' => 'camion.jpg', 'id' => 2],
+        ['titre' => 'moto', 'prix' => 7889, 'categorie' => 'vehicule', 'mail' => 'jk@free.fr', 'image1' => 'moto.jfif.', 'id' => 3],
+        ['titre' => 'ambulance', 'prix' => 4745, 'categorie' => 'vehicule', 'mail' => 'kj@free.fr', 'image1' => 'ambulance.jpg', 'id' => 4],
+        ['titre' => 'landeau', 'prix' => 25, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'landeau.jpg', 'id' => 5],
+        ['titre' => 'avion', 'prix' => 1454, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'avion.png', 'id' => 6],
+        ['titre' => 'bateau', 'prix' => 451454, 'categorie' => 'vehicule', 'mail' => 'bonbon@free.fr', 'image1' => 'bateau.jpeg', 'id' => 7],
+        ['titre' => 'tonneau', 'prix' => 44, 'categorie' => 'objet', 'mail' => 'bonbon@free.fr', 'image1' => 'tonneau.jpg', 'id' => 8]
     ];
 
     $compteur = count($annonces);
@@ -63,17 +63,20 @@ if ($page === 'home') {
             break;
 
         case 'edit':
-            
+            $annonce = $annonces[$_GET['id'] - 1];
             echo $twig->display('details.twig', compact('annonce'));        # code...
             break;
 
         case 'up':
+            $annonce = $annonces[$_GET['id'] - 1];
             echo $twig->display('modifier.twig', compact('annonce'));        # code...
             break;
         case 'val':
-            echo  $twig->display('confirm.twig', compact('annonce'));        # code...
+            $annonce = $annonces[$_GET['id'] - 1];
+            echo  $twig->display('confirmation.twig', compact('annonce'));        # code...
             break;
-        case  "del":
+        case  'del':
+            $annonce = $annonces[$_GET['id'] - 1];
             echo $twig->display('delete.twig', compact('annonce'));        # code...
             break;
         default:

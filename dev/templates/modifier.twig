@@ -17,24 +17,63 @@
 
 {% block body %}
 	<form action="{{fichieradefinir.php}}" method="post">
-		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required value="{{annonce.titre}}">
-		<input type="text" name="categorie" id="catégorie" placeholder="categorie" required value="{{ annonce.categorie }}">
-		<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required value="{{annonce.mail}}">
-		<input type="float" name="prix" id="prix" placeholder="prix" required value="{{ annonce.prix}}">
-		<textarea name="description" id="description" value="{{annonce.description}}">
-	{{annonce.description}}</textarea>
+<div class="card">
+	<label for="titre">Titre:
+	</label>
 
+<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required value="{{annonce.titre}}">
 
-		<input type="file" name="photo01" id="photo01">
-		<input type="file" name="photo02" id="photo01">
-		<input type="file" name="photo03" id="photo01">
-		<input type="file" name="photo04" id="photo01">
-		<input type="file" name="photo05" id="photo0">
-		<input type="file" name="photo06" id="photo06">
+<label for="categorie">Catégorie:
+</label>
+<input type="text" name="categorie" id="catégorie" placeholder="catégorie" required value="{{ annonce.categorie }}">
+<label for="prix">Prix:
+</label>
+<input type="float" name="prix" id="prix" placeholder="prix" required value="{{ annonce.prix}}"></div><div class="card">
+<label for="description">Description:
+</label>
+<textarea name="description" id="description" value="{{annonce.description}}">{{annonce.description}}</textarea>
+<label for="mail">Email:
+</label>
+<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required value="{{annonce.mail}}">
 
-
+</div>
+<div class="container">
+	<div class="card">
+		<label for="image1">Photo:
+		</label>
+		<img class="vignette" src="http://localhost/projet4/public/img/{{ annonce.image1 ? annonce.image1: 'vide.jpg'}}" alt="image1">
+		<input type="file" name="image1" id="image1">
+	</div>
+	<div class="card">
+		<label for="image2">Photo:
+		</label>
+		<img class="vignette" src="http://localhost/projet4/public/img/{{ annonce.image2 ? annonce.image2: 'vide.jpg'}}" alt="image2">
+		<input type="file" name="image2" id="image2">
+	</div>
+	<div class="card">
+		<label for="image3">Photo:
+		</label>
+		<img class="vignette" src="http://localhost/projet4/public/img/{{ annonce.image3 ? annonce.image3: 'vide.jpg'}}" alt="image3">
+		<input type="file" name="image3" id="image">
+	</div>
+	<div class="card">
+		<label for="image4">Photo:
+		</label>
+		<img class="vignette" src="http://localhost/projet4/public/img/{{ annonce.image4 ? annonce.image4: 'vide.jpg'}}" alt="image4">
+		<input type="file" name="image4" id="image4">
+	</div>
+	<div class="card">
+		<label for="image5">Photo:
+		</label>
+		<img class="vignette" src="http://localhost/projet4/public/img/{{ annonce.image5 ? annonce.image5: 'vide.jpg'}}" alt="image5">
+		<input type="file" name="image5" id="image5">
+	</div>
+	<div>
 		<button type="submit">Modifier</button>
 		<button type="reset">Annuler</button>
+
+</div>
+
 	</form>
 {% endblock %}
 {% block footer %}

@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
-{% block pagetitle %}Confirmation de
-	{{annonce.etat}}
+{% block pagetitle %}Confirmation d'enrgistement de l'annonce
+
 {% endblock %}
 
 
@@ -23,7 +23,8 @@
 		<div><img src="{{annonce.image4}}" width="200px" height="150px" alt="" srcset=""></div>
 		<div><img src="{{annonce.image5}}" width="200px" height="150px" alt="" srcset=""></div>
 		<div><img src="{{annonce.image6}}" width="200px" height="150px" alt="" srcset=""></div>
-		<button type="submit">Valider</button>
+<button type="submit">Confirmation</button>
+
 		<input type="hidden" name="id" value="{{annonce.id}}">
 		<input type="hidden" name="mail" value="{{annonce.mail}}">
 		<input type="hidden" name=" etat" value="{{annonce.etat}}">

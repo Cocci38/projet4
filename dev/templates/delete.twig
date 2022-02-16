@@ -1,0 +1,70 @@
+{% extends "base.twig" %}
+{% block pagetitle %}Suppression de l'annonce
+
+{% endblock %}
+{% set compteur=1 %}
+
+
+{% block header %}
+	<navbar baseurl="http://localhost/projet4/dev/">
+		<a href="http://localhost/projet4/dev/">LOGO</a>
+		<span>SLOGAN</span>
+		<a href="http://localhost/projet4/dev/">RETOUR</a>
+	</navbar>
+{% endblock %}
+
+{% block recherche %}{% endblock %}
+
+{% block body %}
+	<h1>Confirmer la suppression de l'Annonce</h1>
+	<form action="" method="post">
+		<div class="card">
+			<label for="titre">Titre:
+			</label>
+			{{annonce.titre}}
+			<label for="categorie">Catégorie:
+			</label>
+			{{annonce.categorie}}
+			<label for="prix">Prix:
+			</label>
+			{{annonce.prix}}
+		</div>
+		<div class="card"></div>
+		<label for="description">Description:</label>
+		{{annonce.decription}}
+		<label for="mail">Email:</label>
+		{{annonce.mail}}
+	</div>
+	<div class="container">
+		<div class="card">
+			<label for="Photo1">Photo:
+			</label>
+			<img src="localhost/projet4/img/{{annonce.image1}}" alt="image1" with="150px">
+		</div>
+		<div class="card">
+			<label for="Photo2">Photo:
+			</label>
+			<img src="localhost/projet4/img/{{annonce.image2}}" alt="image2" with="150px">
+		</div>
+		<div class="card">
+			<label for="Photo3">Photo:
+			</label>
+			<img src="localhost/projet4/img/{{annonce.image3}}" alt="image3" with="150px">
+		</div>
+		<div class="card">
+			<label for="Photo4">Photo:
+			</label>
+			<img src="localhost/projet4/img/{{annonce.image4}}" alt="image4" with="150px">
+		</div>
+		<div class="card">
+			<label for="Photo5">Photo:
+			</label>
+			<img src="localhost/projet4/img/{{annonce.image5}}" alt="image5" with="150px">
+		</div>
+		<div class="button">
+			<button type="submit">Suppression</button>
+		</div>
+	</form>
+</div>{% endblock %}{% block footer %}
+<footer></footer>{% endblock %}
+
