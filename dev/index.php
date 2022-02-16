@@ -58,6 +58,10 @@ if ($page === 'home') {
     //$annonceMJML = $twig->display('mail-add-update.twig', compact('annonce'));
 
     switch (@$_GET['statut']) {
+        case 'mail':
+            $annonce = $annonces[@$_GET['id'] - 1];
+            echo $twig->display('mail-add-update.twig', compact('annonce'));
+            break;
         case 'add':
             echo $twig->display('add.twig'); 
             break;
