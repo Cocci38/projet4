@@ -44,7 +44,7 @@ if ($page === 'home') {
         ['titre' => 'landeau', 'prix' => 25, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'landeau.jpg', 'id' => 5],
         ['titre' => 'avion', 'prix' => 1454, 'categorie' => 'vehicule', 'mail' => 'jkasperski@free.fr', 'image1' => 'avion.png', 'id' => 6],
         ['titre' => 'bateau', 'prix' => 451454, 'categorie' => 'vehicule', 'mail' => 'bonbon@free.fr', 'image1' => 'bateau.jpeg', 'id' => 7],
-        ['titre' => 'tonneau', 'prix' => 44, 'categorie' => 'objet', 'mail' => 'bonbon@free.fr', 'image1' => 'tonneau.jpg', 'id' => 8]
+        ['titre' => 'tonneau', 'prix' => 44, 'categorie' => 'objet', 'mail' => 'bonbon@free.fr', 'image1' => 'tonneau.jpg','image2'=>'tonneau2.jpg', 'id' => 8]
     ];
 
     $compteur = count($annonces);
@@ -86,7 +86,7 @@ if ($page === 'home') {
             echo $twig->display('delete.twig', compact('annonce'));        # code...
             break;
         default:
-            $twig->display('index.twig', compact('annonces'));        # code...
+            $twig->display('accueil.twig', compact('annonces'));        # code...
             break;
     }
     //echo $twig->display('index.twig', compact('annonce'));

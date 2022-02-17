@@ -2,7 +2,11 @@ $fond: #ac4249;
 $degrade :#1b2125;
 $bouton :#3c1823;
 $texte  :#fae5e7;  
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 html,body{
     height: 100%;
     color: $bouton;
@@ -31,9 +35,11 @@ button{
     justify-content: center;;
     border: 2px solid $fond;
     border-radius:5px;
-    
+    cursor: pointer;
 }
 header,navbar{
+    position: fixed;
+    width:100%;
     height:60px;
     background: radial-gradient(circle,$fond 0% , $degrade 85% );
     background-position: -150px;
@@ -44,7 +50,7 @@ header,navbar{
 }
 
 footer{
-    position:absolute;
+    
     background: radial-gradient(circle,$fond 0% , $degrade 85% );
     background-position: -150px;
     bottom:0;
@@ -65,6 +71,7 @@ text-decoration: none;
 }
 
 .container{
+    margin-top: 60px;
     display : grid;
     background-color: $texte;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
