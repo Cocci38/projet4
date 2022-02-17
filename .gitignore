@@ -3,4 +3,5 @@ composer.lock
 .htaccess
 node_modules/
 altorouter/
+app/
 vendor/
