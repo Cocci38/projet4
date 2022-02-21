@@ -5,3 +5,4 @@ node_modules/
 altorouter/
 app/
 vendor/
+dev/vendor/
