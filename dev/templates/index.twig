@@ -3,52 +3,35 @@
 {% endblock %}
 
 {% block header %}
-	<navbar baseurl="http://localhost/projet4/dev/">
-<a class="nav" href="http://localhost/projet4/dev/">LOGO</a>
-
-
-		<span>SLOGAN</span>
-<a class="nav" href="http://localhost/projet4/dev/?statut=add">AJOUT</a>
+<navbar>
+	<a class="nav" href="{{urlbase}}/dev/">LOGO</a>
+	<span>SLOGAN</span>
+<a class="nav" href="{{urlbase}}/dev/?statut=add">AJOUT</a>
 	</navbar>
 {% endblock %}
-
 {% block recherche %}
 	<div class="recherche">
-	Nombre d'annonces enregistrées:{{ element.compteur }}
+		Nombre d'annonces enregistrées:{{ compteur }}
 	</div>
 {% endblock %}
-
-
-
 {% block body %}
 <div class="container">
-
-{% set compteur=1 %}
-{% for annonce in annonces %}
-<a href="http://localhost/projet4/dev/?id={{annonce.id}}&statut=edit">
-
-
-<div class="card{{loop.index}}">
-
-<img class="vignette" src="http://localhost/projet4/public/img/{{annonce.image1}}" alt="image{{loop.index}}" width="150px">
-
-
-
-
-<h1>{{ loop.index}}.{{ annonce.titre }}</h1>
-<h2>{{ annonce.prix }}€</h2>
-
-
-{% set compteur = compteur+1 %}</div></a>{% endfor %}
-
-
+	{% set compteur=1 %}
+	{% for annonce in annonces %}
+	<a href="{{urlbase}}dev/?id={{annonce.id}}&statut=edit">
+		<div class="card{{loop.index}}">
+			<img class="vignette" src="{{urlbase}}public/img/{{annonce.image1}}" alt="image{{loop.index}}" width="150px">
+			<h1>{{ loop.index}}.{{ annonce.titre }}</h1>
+			<h2>{{ annonce.prix }}€</h2>
+			{% set compteur = compteur+1 %}
+		</div>
+	</a>
+	{% endfor %}
 </div>
-
-
 {% endblock %}
 {% block footer %}
 	<footer></footer>
 {% endblock %}
-
+{% block script %}{% endblock %}
 
 

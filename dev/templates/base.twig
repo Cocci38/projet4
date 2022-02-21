@@ -1,9 +1,13 @@
+{% set urlbase = "http://localhost/projet4" %}
+
+
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% block css %}<link rel="stylesheet" href="../public/css/style.css">
+{% block css %}
+	<link rel="stylesheet" href="{{urlbase}}/public/css/style.css">
 {% endblock %}
 <title>
 	{% block pagetitle %}{% endblock %}
@@ -14,9 +18,11 @@
 {% block header %}{% endblock %}
 {% block recherche %}{% endblock %}
 
+
 {% block body %}{% endblock %}
 {% block script %}{% endblock %}
 {% block footer %}{% endblock %}
+
 
 	</body>
 </html>

@@ -4,15 +4,18 @@
 {% set compteur=1 %}
 
 {% block header %}
-	<navbar baseurl="http://localhost/projet4/dev/">
-		<a href="http://localhost/projet4/dev/">LOGO</a>
+<navbar>
+
+		<a href="{{ urlbase }}">LOGO</a>
 		<span>SLOGAN</span>
-		<a href="http://localhost/projet4/dev/">RETOUR</a>
+		<a href="{{ urlbase }}">RETOUR</a>
 	</navbar>
 {% endblock %}
 
 {% block recherche %}{% endblock %}
 {% block body %}
+
+<main>
 <form action="" method="post" url="/upload-picture" enctype="multipart/form-data">
 	<div class="card">
 		<label for="titre">Titre:
@@ -24,42 +27,171 @@
 		<label for="prix">Prix:
 		</label>
 
-<input type="number" name="prix" id="prix" placeholder="prix" required></div><div class="card">
-<label width="200" for="description">Description:</label>
-<textarea type="description" name="description" id="description">Description de l'annonce</textarea>
-<label for="mail">Email:</label>
-
-<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required></div><div class="container">
-
-{% for i in 1..5 %}
-	<div class="card{{i}}">
-		<label for="image{{i}}">Photo:</label>
-		<input type="file" onchange="handleFiles{{i}}(files)" id="upload{{i}}" name="image{{i}}">
+		<input type="number" name="prix" id="prix" placeholder="prix" required></div><div class="card">
+		<label for="description">Description:</label>
+		<textarea type="description" name="description" id="description">Description de l'annonce</textarea>
+		<label for="mail">Email:</label>
+		<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required></div>
+		<div class="container">
+			{% for i in 1..5 %}
+			<div class="card{{i}}">
+				<label for="upload{{i}}">
+					<input class="inputimage" type="file" onchange="handleFiles{{i}}(files)" id="upload{{i}}" name="image{{i}}">
+					<span id="preview{{i}}"><img src="../public/img/vide.jpg" alt="vide" srcset=""></span>
+				</label>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="container">
+		<div class="button">
+				<button type="submit">Envoyer</button>
+				<button type="reset">Annuler</button>
+			</div>
+		</div>
 	</div>
+</form>
 
-{% endfor %}</div><div class="container">
-{% for i in 1..5 %}
-	<div class="card{{i}}">
-		<label for="upload{{i}}">
-			<span id="preview{{i}}"><img src="../public/img/vide.jpg" alt="vide" srcset=""></span>
-		</label>
-
-</div>{% endfor %}</div>
-
-<div class="button">
-	<button type="submit">Envoyer</button>
-	<button type="reset">Annuler</button>
-
-</div></form>
-
+</main>
 
 {% endblock %}
-{% block script %}
-	<script src="../public/js/script.js"></script>
+	{% block script %}
+	<script type="text/javascript">
+	function handleFiles1(files) {
+		var imageType = /^image\//;
+		for (var i = 0; i < files.length; i++) {
+		var file = files[i];
+		if (! imageType.test(file.type)) {
+		alert("veuillez sélectionner une image");
+		} else {
+		if (i == 0) {
+		preview1.innerHTML = '';
+		}
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		preview1.appendChild(img);
+		var reader = new FileReader();
+		reader.onload = (function (aImg) {
+		return function (e) {
+		aImg.src = e.target.result;
+		};
+		})(img);
+
+		reader.readAsDataURL(file);
+		}
+
+		}
+		}
+	function handleFiles2(files) {
+		var imageType = /^image\//;
+		for (var i = 0; i < files.length; i++) {
+		var file = files[i];
+		if (! imageType.test(file.type)) {
+		alert("veuillez sélectionner une image");
+		} else {
+		if (i == 0) {
+		preview2.innerHTML = '';
+		}
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		preview2.appendChild(img);
+		var reader = new FileReader();
+		reader.onload = (function (aImg) {
+		return function (e) {
+		aImg.src = e.target.result;
+		};
+		})(img);
+
+		reader.readAsDataURL(file);
+		}
+
+		}
+		}
+	function handleFiles3(files) {
+		var imageType = /^image\//;
+		for (var i = 0; i < files.length; i++) {
+		var file = files[i];
+		if (! imageType.test(file.type)) {
+		alert("veuillez sélectionner une image");
+		} else {
+		if (i == 0) {
+		preview3.innerHTML = '';
+		}
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		preview3.appendChild(img);
+		var reader = new FileReader();
+		reader.onload = (function (aImg) {
+		return function (e) {
+		aImg.src = e.target.result;
+		};
+		})(img);
+
+		reader.readAsDataURL(file);
+		}
+
+		}
+		}
+	function handleFiles4(files) {
+		var imageType = /^image\//;
+		for (var i = 0; i < files.length; i++) {
+		var file = files[i];
+		if (! imageType.test(file.type)) {
+		alert("veuillez sélectionner une image");
+		} else {
+		if (i == 0) {
+		preview4.innerHTML = '';
+		}
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		preview4.appendChild(img);
+		var reader = new FileReader();
+		reader.onload = (function (aImg) {
+		return function (e) {
+		aImg.src = e.target.result;
+		};
+		})(img);
+
+		reader.readAsDataURL(file);
+
+}
+
+		}
+		}
+	function handleFiles5(files) {
+		var imageType = /^image\//;
+		for (var i = 0; i < files.length; i++) {
+		var file = files[i];
+		if (! imageType.test(file.type)) {
+		alert("veuillez sélectionner une image");
+		} else {
+		if (i == 0) {
+		preview5.innerHTML = '';
+		}
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		preview5.appendChild(img);
+		var reader = new FileReader();
+		reader.onload = (function (aImg) {
+		return function (e) {
+		aImg.src = e.target.result;
+		};
+		})(img);
+
+		reader.readAsDataURL(file);
+		}
+
+		}
+		}
+</script>
 {% endblock %}
-
-
 {% block footer %}
 	<footer></footer>
 {% endblock %}
+
+
 

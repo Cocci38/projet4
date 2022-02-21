@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajoutez votre annonces{% endblock %}
+{% block header %}
+<navbar>
+<a href="{{ urlbase }}">LOGO</a>
+<span>SLOGAN</span>
+<a href="{{ urlbase }}">RETOUR</a></navbar>{% endblock %
+{% block body %}
+<h1>Liste des annonces</h1>
+    <form action="" method="post">
+		<input type="text" name="titre" id="titre" placeholder="Titre de l'annonce" required>
+		<input type="text" name="categorie" id="catégorie" placeholder="categorie" required>
+		<input type="mail" name="mail" id="mail" placeholder="email pour vous joindre" required>
+		<input type="float" name="prix" id="prix" placeholder="prix" required>
+		<textarea type="description" name="description" id="description"></textarea>
+		<input type="file" name="photo[]" id="photo01" multiple>
+		
+
+		<button type="submit">Envoyer</button>
+		<button type="reset">Annuler</button>
+	</form>
+{% endblock %}
